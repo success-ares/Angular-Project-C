@@ -1,0 +1,53 @@
+<div class="margin">
+  <button [routerLink]="['/admin', '']" mat-icon-button color="primary">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="news-title">{{pageTitle}}</span>
+  <button [routerLink]="['/admin/add-pressRelease']" matTooltipPosition="below" matToolTip="test" mat-raised-button color="primary" class="margin green">
+    {{'admin.pressReleases.addPressRelease' | translate}}
+  </button>
+  <span class="relative-url"> Relative Url : /g/pressReleases </span>
+</div>
+
+<div class="flex-center">
+  <mat-spinner mode="indeterminate" *ngIf="loading"></mat-spinner>
+</div>
+
+<div [class.hide]="loading">
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" class="center">
+
+      <!-- PressRelease Title Column -->
+      <ng-container matColumnDef="pressRelease">
+        <mat-header-cell *matHeaderCellDef> {{'admin.pressReleases.title' | translate}} </mat-header-cell>
+        <mat-cell *matCellDef="let pressRelease"> {{pressRelease.title}}</mat-cell>
+      </ng-container>
+
+      <!-- Edit Column -->
+      <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef> {{'admin.pressReleases.edit' | translate}} </mat-header-cell>
+        <mat-cell *matCellDef="let pressRelease">
+          <button [routerLink]="['/admin/edit-pressRelease', pressRelease.key]"  matTooltipPosition="below" matToolTip="test" mat-raised-button class="margin">
+            {{'admin.pressReleases.edit' | translate}}
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Delete Column -->
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef> {{'admin.pressReleases.delete' | translate}} </mat-header-cell>
+        <mat-cell *matCellDef="let pressRelease">
+          <button (click)="deletePressRelease(pressRelease)" matTooltipPosition="below" matToolTip="test" mat-raised-button color="warn" class="margin">
+            {{'general.actions.delete' | translate}}
+          </button>
+        </mat-cell>ذ
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]">
+    </mat-paginator>
+  </div>
+</div>

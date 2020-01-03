@@ -1,0 +1,93 @@
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.par-white{
+  background-color: white;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.m-head .part{
+  color: black;
+}
+.logo {
+  object-fit: scale-down;
+  max-height: 150px;
+  max-width: 100%;
+}
+
+.d-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.d-flex-warp {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-row-cen{
+  justify-content: center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.width-20 {
+  width: calc(20% - 50px);
+  padding: 25px;
+}
+
+.width-25 {
+  width: calc(25% - 50px);
+  padding: 25px;
+}
+
+.full-width-hieght {
+  width: 100%;
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+/* .bg-white{
+  background-color: #ffffff;
+} */
+
+.clickable-button {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .width-20 {
+    width: calc(50% - 50px);
+    padding: 25px;
+  }
+
+  .width-25 {
+    width: calc(50% - 50px);
+    padding: 25px;
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .width-25 {
+    width: calc(25% - 50px);
+    padding: 25px;
+  }
+
+  .width-20 {
+    width: calc(25% - 50px);
+    padding: 25px;
+  }
+ }
+
+ .m-head span{
+    position: relative;
+    font-size: 25px;
+}

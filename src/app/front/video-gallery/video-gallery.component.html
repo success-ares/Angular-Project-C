@@ -1,0 +1,21 @@
+
+<div class="m-head padding-t-100-gb">
+  <span class="color-white-gb">Video Gallery</span>
+</div>
+<div *ngIf="loading" class="spinner">
+  <div class="flex-cen center flex-center">
+    <img src="assets/images/Skywalk logo 2.png">
+  </div>
+</div>
+<div class="container">
+  <section class="videoGalary">
+    <div *ngFor="let vu of videosUrls" class="media" (click)="openModal(vu.url)">
+      <img [src]="vu?.image || 'assets/images/Skywalk symbol grey.png'" alt="" srcset="">
+      <div class="abs-header-paly flex-cen">
+          <i class="material-icons">
+              play_circle_outline
+          </i>
+      </div>
+   </div>
+  </section>
+</div>

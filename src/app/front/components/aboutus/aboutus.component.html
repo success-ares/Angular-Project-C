@@ -1,0 +1,34 @@
+
+
+<div class="flex">
+    <div class="flex-w-30-from-100 car-bg-img pad-0">
+      <img class="img" [src]="aboutus.imageUrl1" alt="aboutus" />
+    </div>
+    <div class="flex-w-70-from-100 flex-cen">
+        <div class="container">
+            <div class="">
+              <div>
+                  <div class="abou-right ">
+                    <h2 class="h-bef main-color">{{aboutus.title1}}</h2>
+                    <p class="cus-p">{{aboutus.content}}</p>
+                      <div *ngIf="aboutus.learnMore" class="button-row">
+                          <a [routerLink]="aboutus.learnMore" class="btn" mat-button>learn more</a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+<div class="pd-tp-200 mg-tp-100 bg-img right bg-img-w-70" [ngStyle]="{'background-image': 'url(' + aboutus.imageUrl2 + ')'}">
+  <div class="relative">
+    <div class="about-us-logo">
+        <img src="assets/images/logo-aboutUs.png">
+    </div>
+  </div>
+<div class="abs-head">
+  <h3 class="main-color">{{aboutus.title2}}</h3>
+</div>
+</div>

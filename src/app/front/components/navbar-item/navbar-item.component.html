@@ -1,0 +1,24 @@
+<li class="flex-1 pos-relative item">
+  <div class="d-flex-row item-style" [class.hide-media]="clickedButton">
+    <button class="flex-1 navbar-button btn-nav just-center" (click)="clicked(true, item.link)">
+      {{item.text}}
+      <i class="material-icons" *ngIf="item.children">
+          keyboard_arrow_right
+          </i>
+    </button>
+  </div>
+  <ul class="pos d-flex-col min-full-width-100 children" *ngIf="item.children" [class.children-media]="clickedButton">
+    <li class="show-media d-flex-row flex-center">
+      <button class="navbar-button min-full-width-100 back-button btn-nav" (click)="removeChild()">
+          <i class="material-icons mg-right-10">arrow_back</i>{{parent}} </button>
+    </li>
+    <app-navbar-item *ngFor="let sumItem of item.children; let j=index"
+                     [class.hide-media]="(clickedChildButton === 0 || clickedChildButton) && clickedChildButton !== j"
+                     [item]="sumItem"
+                     [childIndex]="j"
+                     [parent]="item.text"
+                     (closeMenu)="emitCloseMenu()"
+                     (clickedChildIndex)="clickedChildButtonIndex($event)"
+    ></app-navbar-item>
+  </ul>
+</li>

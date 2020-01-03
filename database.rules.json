@@ -1,0 +1,52 @@
+{
+  "rules": {
+    ".read": "true",
+    ".write": "true",
+    "aboutUs": {
+      ".write": "auth != null",
+      ".read": true
+    },
+    "aboutus": {
+      ".write": "auth != null",
+      ".read": true
+    },
+    "careers": {
+      ".write": "auth != null",
+      ".read": true,
+      "careersListDetails": {
+        ".indexOn": ["available"]
+      }
+    },
+    "contact": {
+      ".write": "true",
+      ".read": "auth != null"
+    },
+    "genericPages": {
+      ".write": "auth != null",
+      ".read": true,
+      "pagesListDetails": {
+        ".indexOn": ["link"]
+      }
+    },
+    "homepage": {
+      ".write": "auth != null",
+      ".read": true
+    },
+    "pages": {
+      ".write": "auth != null",
+      ".read": true
+    },
+    "project": {
+      ".write": "auth != null",
+      ".read": true
+    },
+    "projects": {
+      ".write": "auth != null",
+      ".read": true
+    },
+    "users": {
+      ".write": "auth != null",
+      ".read": "auth != null"
+    }
+  }
+}

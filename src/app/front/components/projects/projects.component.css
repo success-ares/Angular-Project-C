@@ -1,0 +1,22 @@
+.project-sec .bg-img{
+    float: left;
+}
+.proj-abs-header{
+    right: 10%!important;
+    position: absolute;
+    width: 50%;
+    font-size: 25px;
+}
+@media (max-width: 768px) {
+    .proj-abs-header{
+    right: 0!important;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 25px;
+    text-align: center;
+}
+}
+/*.project-sec img{
+    height: 100%;
+}*/

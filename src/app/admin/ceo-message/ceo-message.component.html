@@ -1,0 +1,22 @@
+<div class="container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title class="card-title">
+          Ceo message
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <app-wysiwyg imagesSavePath = "ceo-message"  [contentFormControl]="ceoMessage"></app-wysiwyg>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="d-flex-row-rev">
+          <button (click)="saveCeoMessage()" mat-raised-button color="primary" [disabled]="ceoMessage.invalid">
+            {{'general.actions.save' | translate}}
+          </button>
+          <button [routerLink]="['/admin/homepage']" mat-raised-button class="cancel" color="warn">
+            {{'general.actions.cancel' | translate}}
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+    </div>

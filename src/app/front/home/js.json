@@ -1,0 +1,29 @@
+{
+   "header":{
+     "title":"Tes test test",
+     "image":{
+       "imageDownloadURL":"https://storybird.s3.amazonaws.com/artwork/shishir_naik/full/destination.jpeg"
+     }
+   },
+   "section":{
+    "left": {
+      "image": {
+        "imageDownloadURL": "http://www.madaboutmoneyy.com/wp-content/uploads/2017/07/Success-is-a-Journey-Not-a-Destination.jpg",
+        "imagePath": "path"
+      }
+    },
+    "right": {
+      "title": "Destnation",
+      "titleColor": "white",
+      "titleBackgroundColor": "#333",
+      "paragraph": "hello world hello world hello world hello world hello world hello world ",
+      "paragraphColor": "white",
+      "backgroundColor": "#004579",
+       "image": {
+        "imageDownloadURL": "https://storybird.s3.amazonaws.com/artwork/shishir_naik/full/destination.jpeg",
+        "imagePath": "path"
+      }
+     }
+    }
+}
+

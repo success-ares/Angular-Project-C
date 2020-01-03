@@ -1,0 +1,24 @@
+<div *ngIf="loading" class="spinner">
+  <div class="flex-cen">
+    <img src="assets/images/Skywalk logo 2.png">
+  </div>
+</div>
+<div class="d-flex-col" *ngIf="!loading">
+  <div class="container-cont">
+      <div class="m-head">
+          <span class="cap span">Headquarters</span>
+        </div>
+
+      <div class="flex-1">
+          <section class="d-flex-row full-width">
+              <!-- <div id="map" style="width:400px;height:400px;background:yellow"></div> -->
+            <iframe [src]="mapUrl" class="height-300 full-width" frameborder="0" ></iframe>
+          </section>
+      </div>
+      <div class="container-cont forc-pd flex-1 flex-cen">
+          <div class="cont-header txt-wh p-bg" [innerHtml]="contact?.address"></div>
+        </div>
+  </div>
+
+  <app-shared-contact-us-form></app-shared-contact-us-form>
+</div>

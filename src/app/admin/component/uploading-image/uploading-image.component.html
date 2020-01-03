@@ -1,0 +1,15 @@
+<mat-form-field class="full-width">
+  <mat-label>{{title}} {{required?'*':''}} </mat-label>
+  <input matInput disabled="true" class="margin-b-8">
+  <div class="d-flex-col">
+      <input hidden type="file" accept="image/*" (change)="choosePhoto(imageElement.files)" #imageElement/>
+      <div class="d-flex-row flex-center full-width">
+        <img *ngIf="imageForm.valid" class="image" [src]="imageForm.get('imageDownloadURL').value">
+      </div>
+      <div class="d-flex-row margin-t-8">
+        <button type="button" *ngIf="imageForm.invalid" (click)="imageElement.click()" mat-raised-button color="primary">{{'admin.component.uploading.uploadImageButton' | translate}}</button>
+        <button type="button" class="margin-r-8" *ngIf="imageForm.valid && !required" (click)="deleteImage()" mat-raised-button color="warn">{{'admin.component.uploading.deleteImageButton' | translate}}</button>
+        <button type="button" *ngIf="imageForm.valid" (click)="imageElement.click()" mat-raised-button color="primary">{{'admin.component.uploading.changeImageButton' | translate}}</button>
+      </div>
+  </div>
+</mat-form-field>

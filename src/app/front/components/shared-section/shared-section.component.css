@@ -1,0 +1,197 @@
+.section{
+   height: auto;
+    position: relative;
+    min-height: 100vh;
+}
+
+.min-height-30 {
+  min-height: 30px;
+}
+
+.max-height {
+  max-height: 100% !important;
+}
+
+.full-height {
+height: 100%;
+}
+
+.flex-5 {
+  flex: 5;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.h-full{
+    max-height: 100%;
+    min-height: 100%;
+}
+.grow{
+    flex-grow: 1;
+}
+.footer{
+    padding: 20px 0;
+    font-size: 20px
+}
+.view1{
+    height: calc(100% - 50px);
+}
+.stretc{
+    align-items: stretch;
+}
+.pd-t-50{
+    padding-top: 50px;
+}
+.h-40{
+    height: 40%;
+    overflow: hidden;
+}
+.h-auto{
+    height: auto;
+}
+.h-20{
+    height: 20%;
+}
+@media (max-width: 768px) {
+  .header {
+    padding: 0 !important;
+  }
+
+  .d-flex-col-media {
+    flex-direction: column !important;
+  }
+
+.section{
+    height: auto!important;
+    }
+
+  .line-before {
+    top: 47% !important;
+  }
+
+  .section .p{
+    font-size:13px !important;
+  }
+}
+
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.section > div{
+    height: 100%;
+}
+.section .header{
+    padding-bottom: 50px;
+}
+.section .header h5{
+    font-size: 20px
+}
+.section .header h6{
+    font-weight: bold;
+}
+.section .p{
+    font-size:14px;
+    line-height: 1.4;
+}
+.view1{
+    margin: 50px auto;
+}
+.view2{
+    height: 100%;
+    /*position: relative;*/
+}
+.sec-abs-header{
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 100%;
+    z-index: 3;
+}
+.sec-abs-header h6{
+    padding: 15px;
+}
+.dummy .container > div{
+    padding: 10px 0;
+    font-size: 15px;
+}
+.img-parent{
+    max-height: 50%;
+    margin-top: 20px;
+}
+
+.left{
+    position: relative;
+}
+.img{
+    max-height: auto;
+    /*max-height: auto!important;*/
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.pos-absolute {
+  position: absolute;
+}
+
+.line-before {
+  content: '';
+  left: -55px;
+  position: absolute;
+  background-color: #ceb040;
+  width: 45px;
+  height: 3px;
+  top: 25px;
+}
+.waterMark{
+    z-index: 0!important;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    /* background-image: url(../../../../assets/images/waterWhite.png); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+}
+
+/* .r-h-20{
+    height: 20%;
+}
+.r-h-40{
+    height: 40%;
+}
+.remv-30{
+    height: calc(40% - 30px);
+} */
+
+
+@media (max-width: 768px) {
+    .flex-1-bg{
+        display: none;
+    }
+    .remv-30,.r-h-40,.r-h-20,.section,.max-height,.full-height,.h-full,.view1,.view2,.img{
+        height: auto;
+        max-height: auto;
+    }
+}

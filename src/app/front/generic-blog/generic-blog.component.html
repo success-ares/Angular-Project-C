@@ -1,0 +1,39 @@
+<div class="m-head pd-top-b-100">
+  <span>{{node[pageName]}}</span>
+</div>
+<div *ngIf="loading" class="spinner">
+  <div class="flex-cen center">
+      <img src="assets/images/Skywalk logo 2.png">
+  </div>
+</div>
+<div *ngIf="!loading" class="container">
+<div class="flex">
+  <div class="news-flex-child" *ngFor="let n of blog">
+  <div *ngIf="n?.image" class="news-image">
+    <img class="contain" [src]="n?.image.imageDownloadURL" alt="">
+  </div>
+  <div class="news-content">
+      <div class="">
+      <h2 class="light-black">{{n?.title}}</h2>
+    </div>
+    <div *ngIf="(pageName === 'events' && n?.eventDate) || pageName !== 'events'" class="time">
+      <div *ngIf="pageName === 'events'" class="flex-row">
+          <i class="material-icons g-flex-cen">date_range</i>{{n?.eventDate | date}}
+      </div>
+      <div *ngIf="pageName !== 'events'" class="flex">
+          <i class="material-icons g-flex-cen">date_range</i>{{n?.date | date}}
+      </div>
+    </div>
+    <div class="paragraph">
+      <p class="gray" [innerHtml]=" n?.content | slice:0:100">
+      </p>
+    </div>
+      <div>
+          <a *ngIf="n?.outerButton && n?.outerButton.title" [routerLink] = "['/g' , pageName , n.key]" class="news-button" mat-raised-button>{{n?.outerButton.title}}</a>
+          <a *ngIf="!(n?.outerButton && n?.outerButton.title)" [routerLink] = "['/g' , pageName , n.key]" class="news-button" mat-raised-button>Read More</a>
+
+      </div>
+  </div>
+</div>
+</div>
+</div>

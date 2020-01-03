@@ -1,0 +1,7 @@
+<div class="d-flex-col">
+  <mat-form-field>
+    <input matInput placeholder="Enter Category" [formControl]="categoryNameFrom" required>
+    <mat-error>This filed is required</mat-error>
+  </mat-form-field>
+  <button mat-raised-button [disabled]="categoryNameFrom.invalid" (click)="addNewCategory()" color="primary">Add</button>
+</div>

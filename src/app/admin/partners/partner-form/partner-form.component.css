@@ -1,0 +1,12 @@
+.title-text {
+    color: #000;
+}
+
+.upload-container {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+* /deep/ app-uploading-image img {
+    max-height: 200px !important;
+}

@@ -1,0 +1,16 @@
+<div *ngIf="noti?.title" #notifi class="notifi" >
+<a [routerLink]="noti?.redirectURL">
+    <div class="parent"  >
+        <span>
+        <i class="material-icons">
+                notifications
+                </i>
+        </span>    
+   </div>
+   <div class="child">
+        <p>{{noti?.title}}</p>
+    </div> 
+
+
+</a>
+</div>

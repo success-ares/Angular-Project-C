@@ -1,0 +1,18 @@
+<!-- <div class="flex-center">
+  <mat-spinner mode="indeterminate" *ngIf="loading"></mat-spinner>
+</div> -->
+
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="card-title">
+        {{'admin.careers.career.form.mainInfo' | translate}}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- Main Toolbar of an App -->  
+  
+    <app-section *ngIf="section" [initSection]="section" imagesSavePath="page/{{pageId}}" [pageId]="pageId" [sectionId] = "sectionId" ></app-section>
+    </mat-card-content>
+  </mat-card>
+</div>

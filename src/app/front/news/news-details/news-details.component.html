@@ -1,0 +1,21 @@
+
+  <div *ngIf="!(news | async)?.title" class="spinner">
+      <div class="flex-cen center">
+          <img src="assets/images/Skywalk logo 2.png">
+      </div>
+    </div>
+<div class="mg-100 container">
+  <div class=" news-images">
+    <img class="img" [src]="(news | async)?.image.imageDownloadURL" alt="" srcset="">
+  </div>
+  <div class="">
+    <div class="header news-header">
+      <h2 class="light-black">{{(news | async)?.title}}</h2>
+      <span class="dark-gray">{{(news | async)?.date | date}}</span>
+    </div>
+  </div>
+    <div class="paragaph">
+        <div class="content dark-gray" [innerHtml]="(news | async)?.content">
+        </div>
+    </div>
+</div>

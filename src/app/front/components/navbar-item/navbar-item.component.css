@@ -1,0 +1,159 @@
+.item-style {
+  height: 59px;
+  background-color: black;
+  color: #ceb040;
+  min-width: 150px;
+}
+
+.item-style > a {
+  color: #ceb040;
+}
+
+.min-full-width-100 {
+  min-width: 100%;
+}
+
+.item-style:hover {
+  background-color: black;
+}
+
+.item-style:hover > a {
+  color: #9e0b0f;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+
+.navbar-button {
+  border: none;
+  background-color: black;
+  color: #ceb040;
+  cursor: pointer;
+}
+
+.navbar-button:hover {
+  background-color: #ceb040;
+  color: black;
+}
+
+.navbar-button:focus {
+  outline: none;
+}
+
+
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.pos {
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+.item {
+  z-index: 1000;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.item:hover > .children {
+  display: flex !important;
+}
+
+.children {
+  display: none !important;
+}
+
+/*.item {*/
+  /*display: none;*/
+/*}*/
+
+/*.li:hover {*/
+  /*display: flex;*/
+/*}*/
+
+.pos-relative {
+  position: relative;
+}
+
+.show-media {
+  display: none;
+}
+
+.back-button {
+  height: 50px;
+}
+
+.btn-nav{
+  display: flex;
+  align-items: center;
+}
+.mg-right-10{
+  margin-right: 10px;
+}
+.just-center{
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .d-flex-col-media {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .full-width-height-media {
+    height: 100%;
+    width: 100%;
+  }
+
+  .li-hover:hover > .children {
+    display: none;
+  }
+
+  .children-media {
+    /*display: flex !important;*/
+    position: fixed;
+    top: 103px;
+    left: 0;
+    /*height: 100vh;*/
+    z-index: 1000;
+    width: 100vw;
+    height: 85vh;
+    display: block !important;
+    overflow-y: auto;
+  }
+
+
+  .full-height-media {
+    height: 100%;
+  }
+
+  .full-width-media {
+    width: 100%;
+  }
+
+  .flex-0 {
+    flex: 1;
+  }
+
+  .show-media {
+    display: flex;
+  }
+
+  .hide-media {
+    display: none !important;
+  }
+}

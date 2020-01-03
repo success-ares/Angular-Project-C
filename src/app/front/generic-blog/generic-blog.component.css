@@ -1,0 +1,107 @@
+.center{
+    text-align: center;
+}
+.bg-img-soon{
+    text-align: center;
+    color: #fff;
+      background-image:linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+      ),  url(../../../assets/images/cover.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: calc(100vh - 60px);
+}
+.bg-img-soon h1{
+    color: #ffff;
+    font-size: 50px!important;
+    font-weight: bold;
+}
+.news-flex-child{
+    flex-basis: calc(33.3333334% - 40px);
+    /* padding: 10px; */
+    margin: 10px;
+    box-shadow: 1px 1px 5px 1px #35353580;
+        position: relative;
+    margin-bottom: 50PX;
+}
+.gray{
+    color: #eeeeeeee;
+}
+.g-flex-cen{
+    align-self: center;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.news-image img{
+    height: 250px;
+    width: 100%;
+    max-width: 100%;
+    max-height: 60vh;
+}
+.news-content{
+    padding: 10px;
+}
+.news-content{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.news-button{
+    background-color: #d2af1c;
+    color: #333333;
+    min-width: 35%;
+    max-width: 70%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: -25px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 0;
+    font-size: 14px;
+}
+.time{
+    background-color: #d2af1c;
+    color: #333333;
+    padding: 5px 20px;
+    border-radius: 15px;
+    margin: 10px auto;
+    font-weight: lighter;
+    display: inline-block;
+}
+.flex-row{
+    display: flex;
+}
+/* .light-gray{
+    color: #727272b3;    
+}
+.dark-gray{
+    color: #747474;
+}
+.light-black{
+    color: #333333;
+    font-size: 20px;
+} */
+.m-head{
+    padding: 40px 0;
+    text-align: center;
+    color: #fff;
+    /*position: relative;*/
+}
+.pd-top-b-100{
+    padding-top: 100px;
+}
+.m-head span{
+    position: relative;
+    font-size: 25px;
+    text-transform: uppercase
+}
+.contain{
+    object-fit: contain;
+}
+.pd-top-b-100{
+    padding-top: 100px;
+}

@@ -1,0 +1,132 @@
+<div class="margin">
+  <button [routerLink]="['/admin/genericPages']" mat-icon-button color="primary">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="page-title">{{this.pageTitle}}</span>
+</div>
+
+<div class="flex-center">
+  <mat-spinner mode="indeterminate" *ngIf="loading"></mat-spinner>
+</div>
+
+<div class="container" *ngIf="!loading">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="card-title">
+        {{'admin.genericPages.page.mainInfo' | translate}}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="d-flex-col">
+        <mat-form-field>
+          <input matInput placeholder="{{'admin.genericPages.page.title' | translate}}"
+                 [formControl]="pageTitleFrom" required>
+          <mat-error>{{'admin.genericPages.page.titleRequired' | translate}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <!--<span matPrefix>/p/ &nbsp;</span>-->
+          <input matInput placeholder="{{'admin.genericPages.page.link' | translate}}"
+                 [formControl]="pageLinkFrom" required>
+          <mat-error>{{'admin.genericPages.page.linkRequired' | translate}}</mat-error>
+        </mat-form-field>
+
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="d-flex-row-rev">
+        <button (click)="savePage()" mat-raised-button color="primary" [disabled]="invalidForm()">
+          {{'general.actions.save' | translate}}
+        </button>
+        <button [routerLink]="['/admin/genericPages']" mat-raised-button class="cancel" color="warn">
+          {{'general.actions.cancel' | translate}}
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div class="container" [class.hidden]="!pageId">
+  <div class="margin">
+    <span class="page-title">Page Sections </span>
+    <button [routerLink]="['/admin','genericPages' , pageId , 'section' ]" mat-icon-button color="primary">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" class="center">
+
+      <!-- Page Title Column -->
+      <ng-container matColumnDef="pageTitle">
+        <mat-header-cell *matHeaderCellDef> {{'admin.genericPages.title' | translate}}</mat-header-cell>
+        <mat-cell *matCellDef="let page"> {{page.right.title}}</mat-cell>
+      </ng-container>
+
+      <!-- Edit Column -->
+      <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef> {{'admin.genericPages.edit' | translate}}</mat-header-cell>
+        <mat-cell *matCellDef="let page">
+          <button [routerLink]="['/admin/genericPages', pageId, 'edit' , page.key]" matTooltipPosition="below"
+                  matToolTip="test" mat-raised-button class="margin">
+            {{'admin.genericPages.edit' | translate}}
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <!-- section order Column -->
+      <ng-container matColumnDef="link">
+        <mat-header-cell *matHeaderCellDef> {{'admin.genericPages.link' | translate}}</mat-header-cell>
+        <mat-cell *matCellDef="let page">
+          #{{page.right.link}}
+        </mat-cell>
+      </ng-container>
+
+
+      <!-- Move Column -->
+      <ng-container matColumnDef="move">
+        <mat-header-cell *matHeaderCellDef>{{'admin.genericPages.move' | translate}}</mat-header-cell>
+        <mat-cell *matCellDef="let row; let i = index;">
+          <div class="d-flex-row">
+            <button mat-raised-button align="left" (click)="move(getRowIndex(i), true)" [disabled]="getRowIndex(i) === 0">
+              <mat-icon>arrow_upward</mat-icon>
+            </button>
+            <button mat-raised-button align="left" (click)="move(getRowIndex(i), false)"
+                    [disabled]="getRowIndex(i) >= sections.length - 1">
+              <mat-icon>arrow_downward</mat-icon>
+            </button>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Delete Column -->
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef> {{'admin.genericPages.delete' | translate}}</mat-header-cell>
+        <mat-cell *matCellDef="let page">
+          <button (click)="deleteSection(page)" matTooltipPosition="below" matToolTip="test" mat-raised-button
+                  color="warn" class="margin">
+            {{'general.actions.delete' | translate}}
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator
+      #paginator
+      [pageIndex]="pageIndex"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="[5, 10, 20]"
+      (page)="pageEvent = $event">
+    </mat-paginator>
+  </div>
+  <div class="d-flex-row-rev margin-t-8">
+    <button (click)="save()" mat-raised-button color="primary">
+      {{'general.actions.save' | translate}}
+    </button>
+    <button [routerLink]="['/admin/genericPages']" mat-raised-button class="cancel margin-r-8" color="warn">
+      {{'general.actions.cancel' | translate}}
+    </button>
+  </div>
+</div>

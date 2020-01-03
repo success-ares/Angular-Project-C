@@ -1,0 +1,88 @@
+.notifi{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 99999;
+    height: auto;
+    transition: all 3s;
+}
+.flex-notifi{
+    display: flex;
+    align-items: center;
+}
+.mr-5{
+    margin-right: 5px;
+}
+body{
+    background:linear-gradient(to right, #fff, #eee);
+    }
+    .parent{
+      width:40px;
+      height:40px;
+      background:#816e26;
+      margin:auto;
+      border-radius:100%;
+      margin-top:60px;
+      position:relative;
+      cursor:pointer;
+    }
+    @keyframes breathe{
+      0%{transform:scale(1)}
+      50%{transform:scale(0.5)}
+      100%{transform:scale(1)}
+    }
+    @keyframes breathe2{
+      0%{transform:scale(1)}
+      50%{transform:scale(1.2)}
+      100%{transform:scale(1)}
+    }
+    .parent:before{
+      content:"";
+      position:absolute;
+      top:-25px;
+      left:-25px;
+      z-index:2;
+      width:90px;
+      height:90px;
+      background:#ceb040;
+      opacity:0.3;
+      border-radius:100%;
+      animation:breathe2 2s infinite;
+    }
+    .parent:after{
+      content:"";
+      position:absolute;
+      top:-45px;
+      left:-45px;
+      z-index:3;
+      width:130px;
+      height:130px;
+      background:#ceb040;
+      opacity:0.2;
+      border-radius:100%;
+      animation:breathe 2s infinite;
+    }
+    .parent > span{
+      color:#fff;
+      font-weight:bold;
+      font-size:25px;
+      position:absolute;
+      z-index:4;
+      top:6px;
+      left:8px;
+    }
+    .parent:hover + .child{
+        display: block;
+    }
+    .child{
+        display: none;
+        position: absolute;
+        right: 200%;
+        top: 55%;
+        width: auto;
+        min-width: 200px;
+        background-color: #a38b32;
+        color: white;
+        padding: 0 10px;
+        border-radius: 2px;
+    }

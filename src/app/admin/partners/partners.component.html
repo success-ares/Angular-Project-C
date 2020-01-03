@@ -1,0 +1,42 @@
+<div class="margin">
+  <button [routerLink]="['/admin']" mat-icon-button color="primary">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="page-title">{{this.pageTitle}}</span>
+</div>
+
+<div class="flex-center">
+  <mat-spinner mode="indeterminate" *ngIf="loading"></mat-spinner>
+</div>
+
+
+<div class="container" *ngIf="!loading">
+  <div class="flex" style="align-items: center">
+    <!-- <app-uploading-image [title]="'Partener logo'" initImage='' imagesSavePath="partners" [required]="false" (image)="uploadPartnersLogo($event)"></app-uploading-image> -->
+    <button (click)="openPartnerForm()" mat-raised-button color="primary">
+      {{'general.actions.add' | translate}}
+    </button>
+    <button (click)="savePartners()" mat-raised-button color="primary" >
+        {{'general.actions.save' | translate}}
+    </button>
+  </div>
+  <div class="flex">
+    <div *ngFor="let p of partners ; let i = index" style="margin: 20px">
+      <img [src]="p.imageDownloadURL" class="logo-image"/>
+      <div class="flex" style="margin-top: 20px;">
+        <button  mat-icon-button class="dir" [disabled]='i == 0' (click)="movePartner('left' , p)">
+          <i class="material-icons">chevron_left</i>
+        </button>
+        <button  mat-icon-button class="edit-button" (click)="openPartnerForm(i, p)">
+          <i class="material-icons">edit</i>
+        </button>
+        <button mat-icon-button class="del" (click)="deletePartner(p)">
+          <i class="material-icons">delete</i>
+        </button>
+        <button  mat-icon-button class="dir"  [disabled]='i == (partners.length - 1)' (click)="movePartner('right', p)">
+          <i class="material-icons">chevron_right</i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

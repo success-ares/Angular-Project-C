@@ -1,0 +1,15 @@
+<agm-map
+  [latitude]="latitude"
+  [longitude]="longitude"
+  [zoom]="zoom"
+  [disableDefaultUI]="false"
+  [zoomControl]="true">
+
+  <agm-marker
+    [latitude]="marker.latitude"
+    [longitude]="marker.longitude"
+    [label]="marker.label"
+    [markerDraggable]="marker.draggable"
+    (dragEnd)="markerDragEnd($event)">
+  </agm-marker>
+</agm-map>

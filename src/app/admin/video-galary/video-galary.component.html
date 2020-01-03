@@ -1,0 +1,66 @@
+
+<div class="flex-center">
+  <mat-spinner mode="indeterminate" *ngIf="loading"></mat-spinner>
+</div>
+
+<div class="container" *ngIf="!loading">
+  <div class="flex">
+    <mat-form-field class=" wd-80">
+      <!--<span matPrefix>/p/ &nbsp;</span>-->
+      <input matInput placeholder="Video url" type="url"
+        [formControl]="url" required>
+      <mat-error>{{'admin.genericPages.page.linkRequired' | translate}}</mat-error>
+    </mat-form-field>
+
+  <div class="">
+    <button (click)="addVideoUrl()" mat-raised-button color="primary" [disabled]="url.invalid">
+      {{'general.actions.save' | translate}}
+    </button>
+  </div>
+  </div>
+  </div>
+  <div class="example-container mat-elevation-z8" [class.hidden]='loading'>
+    <mat-table #table [dataSource]="dataSource" class="center">
+
+      <!-- Url Column -->
+      <ng-container matColumnDef="url">
+        <mat-header-cell *matHeaderCellDef> {{'admin.videoGallery.url' | translate}}  </mat-header-cell>
+        <mat-cell *matCellDef="let row;">{{row.url}}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Move Column -->
+      <ng-container matColumnDef="move">
+        <mat-header-cell *matHeaderCellDef>{{'admin.videoGallery.move' | translate}}</mat-header-cell>
+        <mat-cell *matCellDef="let row; let i = index;">
+          <button mat-raised-button align="left" (click)="move(getRowIndex(i), true)" [disabled]="getRowIndex(i) === 0">
+            <mat-icon>arrow_upward</mat-icon>
+          </button>
+          <button mat-raised-button align="left" (click)="move(getRowIndex(i), false)" [disabled]="getRowIndex(i) >= urls.length - 1">
+            <mat-icon>arrow_downward</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Delete Column -->
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef> {{'admin.imageGallery.delete' | translate}} </mat-header-cell>
+        <mat-cell *matCellDef="let row; let i = index;">
+          <button (click)="delete(getRowIndex(i))" matTooltipPosition="below" matToolTip="test" mat-raised-button color="warn" class="margin">
+            {{'general.actions.delete' | translate}}
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator
+      #paginator
+      [pageIndex]="pageIndex"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="[5, 10, 20]"
+      (page)="pageEvent = $event">
+    </mat-paginator>
+  </div>

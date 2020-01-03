@@ -1,0 +1,58 @@
+<div class="margin">
+  <button [routerLink]="['admin']" mat-icon-button color="primary">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="page-title">{{this.pageTitle}}</span>
+</div>
+
+<div class="flex-center">
+  <mat-spinner mode="indeterminate" *ngIf="loading"></mat-spinner>
+</div>
+
+<mat-tab-group *ngIf="!loading">
+  <mat-tab label="Navbar">
+    <div>
+      <button mat-icon-button color="primary" (click)="addNewMainItem()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <div *ngFor="let mainItem of navbar; let i=index;">
+        <app-tree-node [node]="mainItem" [parent]="navbar" [index]="i" [level]="0"></app-tree-node>
+      </div>
+
+      <div class="flex">
+        <button (click)="cancel()" mat-raised-button class="cancel" color="warn">
+          {{'general.actions.cancel' | translate}}
+        </button>
+        <button (click)="save()" mat-raised-button color="primary">
+          {{'general.actions.save' | translate}}
+        </button>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Contact">
+    <div class="d-flex-col margin-10">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Email" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Phone" [formControl]="phone" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Facebook Link" [formControl]="facebook">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Instagram Link" [formControl]="instagram">
+      </mat-form-field>
+      <div class="flex">
+        <button (click)="cancel()" mat-raised-button class="cancel" color="warn">
+          {{'general.actions.cancel' | translate}}
+        </button>
+        <button [disabled]="email.invalid || phone.invalid" (click)="saveContact()" mat-raised-button color="primary">
+          {{'general.actions.save' | translate}}
+        </button>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>

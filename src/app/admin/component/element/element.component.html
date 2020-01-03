@@ -1,0 +1,10 @@
+<form [formGroup]="elementForm">
+  <app-uploading-image [initImage]="elementForm.get('image')" [title]="'Element Image'" [imagesSavePath]="imagesSavePath" [required]="true" (image)="updateImage($event)"></app-uploading-image>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Title" (change)="emitElement()" formControlName="title" required>
+    <mat-error>this field is required</mat-error>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Title Color" (change)="emitElement()" formControlName="titleColor">
+  </mat-form-field>
+</form>

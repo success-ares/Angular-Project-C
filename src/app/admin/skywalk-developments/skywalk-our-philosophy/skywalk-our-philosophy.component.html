@@ -1,0 +1,35 @@
+<div class="margin">
+  <button [routerLink]="['/admin/skywalkDevelopments']" mat-icon-button color="primary">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="page-title">{{'admin.skywalkDevelopments.ourPhilosophyComponent.title' | translate}} </span>
+</div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>
+      {{'admin.skywalkDevelopments.ourPhilosophyComponent.info' | translate}}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="d-flex-col">
+      <span class="page-title">{{'admin.skywalkDevelopments.ourPhilosophyComponent.headerInfo' | translate}} </span>
+      <app-header [initHeader]="philosophy?.header" [imagesSavePath]="imagesSavePath" (header)="updateHeader($event)" (valid)="updateHeaderValidation($event)" ></app-header>
+      <span class="page-title">{{'admin.skywalkDevelopments.ourPhilosophyComponent.corporateVisionInfo' | translate}} </span>
+      <app-section [initSection]="philosophy?.corporateVision" [imagesSavePath]="imagesSavePath" (section)="updateCorporateVision($event)" (valid)="updateCorporateVisionValidation($event)" ></app-section>
+      <span class="page-title">{{'admin.skywalkDevelopments.ourPhilosophyComponent.strategyInfo' | translate}} </span>
+      <app-section [initSection]="philosophy?.strategy" [imagesSavePath]="imagesSavePath" (section)="updateStrategy($event)" (valid)="updateStrategyValidation($event)" ></app-section>
+      <span class="page-title">{{'admin.skywalkDevelopments.ourPhilosophyComponent.approachInfo' | translate}} </span>
+      <app-section [initSection]="philosophy?.approach" [imagesSavePath]="imagesSavePath" (section)="updateApproach($event)" (valid)="updateApproachValidation($event)" ></app-section>
+      <span class="page-title">{{'admin.skywalkDevelopments.ourPhilosophyComponent.targetSegmentInfo' | translate}} </span>
+      <app-section [initSection]="philosophy?.targetSegment" [imagesSavePath]="imagesSavePath" (section)="updateTargetSegment($event)" (valid)="updateTargetSegmentValidation($event)" ></app-section>
+
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="d-flex-row-rev">
+      <button [disabled]="!valid()" (click)="save()" mat-raised-button color="primary">
+        {{'admin.skywalkDevelopments.ourPhilosophyComponent.save' | translate}}
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

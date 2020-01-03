@@ -1,0 +1,57 @@
+<div class="d-flex-col">
+  <!--<div class="d-flex-row flex-center">
+    <button mat-raised-button type="button" (click)="swapChild()" color="primary">Swap</button>
+  </div>-->
+  <div class="d-flex-row">
+     <div class="flex-1 d-flex-col padding-10" [class.order-2]="swapped">
+       <app-uploading-image [initImage]="sectionForm.get('left').get('image').value" [title]="'Left Image'" [imagesSavePath]="imagesSavePath" [required]="true" (image)="updateLeftChildImage($event)"></app-uploading-image>
+     </div>
+     <div class="flex-1 d-flex-col padding-10">
+       <app-uploading-image [initImage]="sectionForm.get('right').get('image').value" [title]="'Right Image'" [imagesSavePath]="imagesSavePath" [required]="false" (image)="updateRightChildImage($event)"></app-uploading-image>
+       <form [formGroup]="sectionForm">
+         <div class="d-flex-col" formGroupName="right">
+           <mat-form-field class="full-width">
+             <input matInput placeholder="Title" formControlName="title" required>
+             <mat-error>this field is required</mat-error>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <input matInput placeholder="Title Color" formControlName="titleColor" type="color">
+           </mat-form-field>
+           <mat-form-field class="full-width">
+             <input matInput placeholder="Title Background Color"  formControlName="titleBackgroundColor" type="color">
+           </mat-form-field>
+          <div class="full-width">
+              <span>Paragraph</span>
+            <app-wysiwyg [imagesSavePath] = "imagesSavePath"  [contentFormControl]="sectionForm.get('right').get('paragraph')"></app-wysiwyg>
+          </div>
+           <mat-form-field class="full-width">
+             <input matInput placeholder="Paragraph Color"  formControlName="paragraphColor" type="color">
+           </mat-form-field>
+           <mat-form-field class="full-width">
+             <input matInput placeholder="Background Color" formControlName="backgroundColor" required type="color">
+             <mat-error>this field is required</mat-error>
+           </mat-form-field>
+           <div class="full-width">
+             <span>Footer</span>
+              <app-wysiwyg [imagesSavePath] = "imagesSavePath"  [contentFormControl]="sectionForm.get('right').get('footer')"></app-wysiwyg>
+            </div>
+             <mat-form-field class="full-width">
+               <input matInput placeholder="Paragraph Color"  formControlName="footerColor" type="color">
+             </mat-form-field>
+             <mat-form-field class="full-width">
+               <input matInput placeholder="Background Color" formControlName="footerbackgroundColor" required type="color">
+               <mat-error>this field is required</mat-error>
+             </mat-form-field>
+
+             <div class="flex-1 d-flex-col padding-10" [class.order-2]="swapped">
+                <app-uploading-image [initImage]="sectionForm.get('right').get('wterMark').value" [title]="'Water mark'" [imagesSavePath]="imagesSavePath" (image)="updateWaterMarkImage($event)"></app-uploading-image>
+              </div>
+
+         </div>
+       </form>
+     </div>
+  </div>
+  <div class="button-row">
+      <button mat-raised-button  color="primary" (click)= "emitForm()">Save</button>
+  </div>
+</div>

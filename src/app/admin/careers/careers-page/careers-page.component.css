@@ -1,0 +1,38 @@
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.margin-b-8 {
+  margin-bottom: 8px;
+}
+
+.example-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+  margin-left: 8px;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.example-selected-value {
+  margin: 15px 0;
+}
+
+.header-title {
+  margin: 20px 10px;
+  font-size: 22px;
+  font-weight: 600;
+  align-items: baseline;
+}
+
+.d-flex-row-rev {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.hide {
+  display: none;
+}

@@ -1,0 +1,3 @@
+<!--<app-shared-header [header]="(response | async)?.header"></app-shared-header>-->
+<app-shared-section *ngFor="let ele of (response | async)" leftAnimate="zoomIn" rightAnimate="zoomIn" [left]="ele?.section.left" [right]="ele?.section.right">
+</app-shared-section>

@@ -1,0 +1,69 @@
+<div class="bgblack">
+    <div class="nav-bgGold">
+        <div  #menu  class="flex flex-sm-row h100100 gold" >
+            <div class="flex flex-sm-row">
+                <div class="mg5">
+                    <i class="material-icons"> email</i>
+                    <p><a href="mailto:{{navbar?.contact.email}}" class="color-black">{{navbar?.contact.email}}</a></p>
+                </div>
+                <div class="mg5">
+                    <i class="material-icons">phone</i>
+                    <p><a href="tel:{{navbar?.contact.phone}}" class="color-black">{{navbar?.contact.phone}}</a></p>
+                </div>
+            </div>
+            <div class="flex flex-sm-row">
+                <div class="flex flex-center">
+                    <a target="_blank" [href]="navbar?.contact.facebook">
+                        <img class="img-icon" src="assets/icons/facebook-f.svg">
+                    </a>
+                </div>
+                <div class="flex flex-center ">
+                    <a target="_blank" [href]="navbar?.contact.instagram">
+                        <img class="img-icon" src="assets/icons/instagram.svg">
+                    </a>
+                </div>
+             </div>
+        </div>
+
+    <div class="navbar-container">
+    <div class="d-flex-row flex-1">
+      <div class="d-flex-row width-15">
+        <a [routerLink]="['/home']">
+          <img class="navbar-logo-img" src="assets/images/Skywalk logo 2.png" alt="SkyWalk">
+        </a>
+      </div>
+      <ul class="flex-1 d-flex-row flex-center ul-navbar-media" [class.hide]="!isNavBarOpen">
+        <li class="flex-1 d-flex-col main-navbar-item child-li" *ngFor="let item of navLinks; let i=index">
+          <div class="flex-1 d-flex-row navbar-item-style" [class.hide-media]="clickedButton && navLinks[clickedButton].children">
+            <button class="flex-1 navbar-button btn-nav just-center" (click)="clicked(i, item.link)">
+                {{item.text}}
+                <i class="material-icons show-media" *ngIf="item.children">keyboard_arrow_right</i></button>
+          </div>
+          <ul class="d-flex-col min-full-width-100 children" [class.children-media]="clickedButton === i && item.children">
+            <li class="show-media d-flex-row">
+              <button class="navbar-button back-button btn-nav" (click)="removeChild()" [class.hide-media]="(clickedChildButton === 0 || clickedChildButton)">
+                    <i class="material-icons mg-right-10">arrow_back</i> Main menu</button>
+            </li>
+            <app-navbar-item class="flex-1 d-flex-col" (unClickChild)="removeChild()"
+                             *ngFor="let sumItem of item.children; let j=index"
+                             [class.hide-media]="(clickedChildButton === 0 || clickedChildButton) && clickedChildButton !== j"
+                             [item]="sumItem"
+                             [parent]="item.text"
+                             [childIndex]="j"
+                             (closeMenu)="emitCloseMenu()"
+                             (clickedChildIndex)="clickedChildButtonIndex($event)"
+            ></app-navbar-item>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="flex-0 d-flex-row-rev show-media">
+      <button (click)="togglNavbar()" class="flex-0 togglNavbar-button">
+        <i *ngIf="!isNavBarOpen" class="material-icons">menu</i>
+        <i *ngIf="isNavBarOpen" class="material-icons">close</i>
+      </button>
+    </div>
+  </div>
+</div>
+
+</div>

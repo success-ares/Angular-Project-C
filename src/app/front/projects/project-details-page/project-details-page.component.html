@@ -1,0 +1,99 @@
+<div *ngIf="loading" class="spinner">
+  <div class="flex-cen">
+      <img src="assets/images/spinner.gif">
+  </div>
+</div>
+
+<div class="d-flex-col" *ngIf="!loading">
+
+  <div class="d-flex-row flex-center background pos-relative">
+    <div class="background-image"
+    [ngStyle]="{'background-image': 'linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),'+
+    'url('+project.headerImage.imageDownloadURL+')'}"></div>
+    <h1 class="upperCase white text-center"> {{project.title}} </h1>
+    <div class="logo">
+      <img class="full-width" src="assets/images/logo-aboutUs.png">
+    </div>
+  </div>
+
+  <div class="main-container d-flex-col">
+    <section class="d-flex-row full-width flex-wrap d-flex-col-media">
+      <div class="flex-1 d-flex-col flex-center full-width about-container">
+        <div class="d-flex-col">
+          <h1 class="black-line-before">{{project.title}}</h1>
+          <div [innerHtml]="project.about">
+          </div>
+        </div>
+      </div>
+      <div class="flex-1 full-width">
+        <img class="full-width-hieght" [src]="project.aboutImage.imageDownloadURL">
+      </div>
+    </section>
+
+    <section class="d-flex-row full-width flex-wrap d-flex-col-media">
+      <div class="flex-1 full-width">
+        <iframe [src]="mapUrl" class="full-width-hieght" frameborder="0"></iframe>
+      </div>
+      <div class="flex-1 d-flex-col flex-center full-width location-container">
+        <div class="d-flex-col">
+          <h1 class="blue-line-before upperCase">Location</h1>
+          <p>Situated on the Cairo Alexandria Highway</p>
+          <button (click)="openGoogleMapInNewTab()" mat-raised-button class="location-button">
+            <mat-icon>location_on</mat-icon>
+            CHECK
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-flex-row full-width background-color-blue flex-wrap d-flex-col-media">
+      <div class="flex-1 full-width">
+        <div class="d-flex-col full-width masterplan-padding-image">
+          <img class="full-width-hieght" [src]="project.masterplan.imageDownloadURL">
+        </div>
+      </div>
+      <div class="flex-1 d-flex-col flex-center full-width masterplan-container">
+        <div class="d-flex-col">
+          <h1 class="white-line-before upperCase">Master plan</h1>
+          <div class="white" [innerHtml]="project.masterplanDescription"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-flex-col full-width background-color-red padding-50">
+      <div class="full-width d-flex-col-media d-flex-row padding-50 remove-t-b-padding flex-wrap d-flex-col-media d-block">
+         <div *ngIf="project.shopping" class="flex-1 d-flex-row flex-center background-ele-image margin-10"
+              [ngStyle]="{'background-image': 'linear-gradient(rgba(158, 11, 15, .4), rgba(158, 11, 15, .4)),'+
+              'url('+project.shopping.imageDownloadURL+')'}">
+            <h1>shopping</h1>
+         </div>
+         <div *ngIf="project.dining" class="flex-1 d-flex-row flex-center background-ele-image margin-10"
+              [ngStyle]="{'background-image': 'linear-gradient(rgba(158, 11, 15, .4), rgba(158, 11, 15, .4)),'+
+              'url('+project.dining.imageDownloadURL+')'}">
+            <h1>dining</h1>
+         </div>
+         <div *ngIf="project.business" class="flex-1 d-flex-row flex-center background-ele-image  margin-10"
+             [ngStyle]="{'background-image': 'linear-gradient(rgba(158, 11, 15, .4), rgba(158, 11, 15, .4)),'+
+             'url('+project.business.imageDownloadURL+')'}">
+           <h1>business</h1>
+         </div>
+      </div>
+
+      <div class="full-width d-flex-row padding-50 remove-t-b-padding flex-wrap d-flex-col-media d-block">
+         <div *ngIf="project.entertainment" class="flex-1 d-flex-row flex-center background-ele-image margin-10"
+              [ngStyle]="{'background-image': 'linear-gradient(rgba(158, 11, 15, .4), rgba(158, 11, 15, .4)),'+
+              'url('+project.entertainment.imageDownloadURL+')'}">
+            <h1>entertainment</h1>
+         </div>
+         <div *ngIf="project.hospitalityAndResidence"  class="flex-1 d-flex-row flex-center background-ele-image margin-10"
+              [ngStyle]="{'background-image': 'linear-gradient(rgba(158, 11, 15, .4), rgba(158, 11, 15, .4)),'+
+              'url('+project.hospitalityAndResidence.imageDownloadURL+')'}">
+            <h1>HOSPITALITY</h1>
+         </div>
+         <div class="flex-1 d-flex-row flex-center background-ele-image margin-10">
+            <img class="full-height" src="assets/images/logo-aboutUs.png">
+         </div>
+      </div>
+    </section>
+  </div>
+</div>

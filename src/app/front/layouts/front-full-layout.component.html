@@ -1,0 +1,71 @@
+<!--<mat-toolbar [style.background-color]="blackBg">
+    <mat-toolbar-row>
+        <div class="header">
+            <a  routerLink="/">
+                <img src="assets/images/Skywalk logo 2.png" alt="SkyWalk">
+            </a>
+        </div>
+        <div class="container" style="color: white">
+    <div #navbar class="navbar" >
+    <div class="nav-list">
+        <ul role="list">
+            <button  mat-button  (click)="routeTo('home')"  class="li" role="listitem" >
+                  Home
+            </button>
+            <button mat-button [matMenuTriggerFor]="menu" class="li" role="listitem">Skywalk Developments
+             </button>
+             <mat-menu #menu="matMenu">
+                <button (click)="routeTo('skywalk-developments/about-us')" mat-menu-item>About us</button>
+                <button (click)="routeTo('skywalk-developments/philosophy')" mat-menu-item>Our Philosophy  </button>
+                <button (click)="routeTo('skywalk-developments/key-to-sucess')" mat-menu-item>Our Keys To Success</button>
+                <button (click)="routeTo('skywalk-developments/parteners')" mat-menu-item>Our Partners</button>
+            </mat-menu>
+            <button mat-button [matMenuTriggerFor]="projects" class="li" role="listitem">Skywalk Project
+             </button>
+             <mat-menu #projects="matMenu">
+                <button  mat-menu-item [matMenuTriggerFor]="Concept">Concept</button>
+                <mat-menu #Concept="matMenu">
+                    <button [routerLink]="['/skywalk-projects/concept']" fragment="dining" mat-menu-item>Dining & Dining Experience</button>
+
+                    <button [routerLink]="['/skywalk-projects/concept']" fragment="shopping" mat-menu-item>Shopping</button>
+                    <button [routerLink]="['/skywalk-projects/concept']" fragment="entertainment" mat-menu-item>Entertainment</button>
+                    <button [routerLink]="['/skywalk-projects/concept']" fragment="business" mat-menu-item>Business</button>
+                    <button [routerLink]="['/skywalk-projects/concept']" fragment="hospitalityAndResidence" mat-menu-item>Hospitality & Residence</button>
+                </mat-menu>
+                <button (click)="routeTo('skywalk-projects/destination')" mat-menu-item>Destination</button>
+                <button  (click)="routeTo('skywalk-projects/location')" mat-menu-item>Location </button>
+                <button (click)="routeTo('skywalk-projects/skyelements')" mat-menu-item>Elements</button>
+                <button (click)="routeTo('skywalk-projects/specialty-elements')"  mat-menu-item>Specialty Elements</button>
+
+            </mat-menu>
+            <button  mat-button  (click)="routeTo('career')" class="li" role="listitem">
+                 Careers
+            </button>
+            <button  mat-button  (click)="routeTo('news')" class="li" role="listitem">
+              News
+            </button>
+            <button  mat-button  (click)="routeTo('contactus')" class="li" role="listitem">
+                   Contact us
+            </button>
+        </ul>
+    </div>
+</div>
+        </div>
+        <div (click)="togglNavbar()" class="nav">
+            <i *ngIf="!isNavBarOpen" class="material-icons">menu</i>
+            <i *ngIf="isNavBarOpen" class="material-icons">close</i>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+-->
+<div class="padding-30"></div>
+<app-navbar></app-navbar>
+<div class="m-h-100-vh">
+    <router-outlet></router-outlet>
+</div>
+<!--Contact us Section -->
+<div id="contact" class="contact-sec pd-tp-20">
+    <app-contact></app-contact>
+</div>
+
+<app-shared-notification></app-shared-notification>

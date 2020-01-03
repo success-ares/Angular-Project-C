@@ -1,0 +1,14 @@
+<div class="gen" *ngIf="!loading">
+<app-shared-section  *ngFor="let sec of sections" leftAnimate="zoomIn" rightAnimate="zoomIn" [left]="sec.left" [right]="sec.right">
+</app-shared-section>
+</div>
+
+<div class="spinner" *ngIf="loading">
+    <div class="flex-cen center">
+        <img src="assets/images/Skywalk logo 2.png">
+    </div>
+  </div>
+ <h1 style="margin:30vh 0;text-align: center" *ngIf="!loading && (sections == null || sections.length < 1)">
+   Coming soon
+ </h1>
+

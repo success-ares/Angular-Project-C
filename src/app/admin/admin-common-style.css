@@ -1,0 +1,94 @@
+.container {
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+}
+
+.page-title {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin: 10px;
+}
+
+.page-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.page-section-title {
+  font-size: 1.5em;
+  font-weight: 500;
+  font-family: 'Myriad Pro', sans-serif;
+}
+
+mat-form-field {
+  margin-left: 10px;
+  width: 100%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 30px;
+}
+
+.flex {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cancel {
+  margin-right: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+.margin-top {
+  margin-top: 10px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  max-height: 150px;
+  margin: 3px;
+}
+
+.image-field {
+  max-height: 150px;
+  margin: 3px;
+  display: block;
+}
+
+.margin {
+  margin: 10px;
+  margin-right: 0px;
+}
+
+.green {
+  background-color: #43A047;
+}
+
+.hide {
+  display: none;
+}
+
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex-row {
+  display: flex;
+  flex-direction: row;
+}

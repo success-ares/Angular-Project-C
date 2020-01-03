@@ -1,0 +1,37 @@
+
+<div class="container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title class="card-title">
+          Notification 
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="container">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Notification title"
+             [formControl]="title" required>
+            <mat-error>{{'admin.genericPages.page.titleRequired' | translate}}</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <!--<span matPrefix>/p/ &nbsp;</span>-->
+            <input matInput placeholder="Notification relative link"
+             [formControl]="redirectURL" required>
+            <mat-error>{{'admin.genericPages.page.linkRequired' | translate}}</mat-error>
+          </mat-form-field>
+
+      </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="d-flex-row-rev">
+          <button (click)="saveNotification()" mat-raised-button color="primary" [disabled]="title.invalid || redirectURL.invalid">
+            {{'general.actions.save' | translate}}
+          </button>
+          <button [routerLink]="['/admin/homepage']" mat-raised-button class="cancel" color="warn">
+            {{'general.actions.cancel' | translate}}
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="ceo-sec">
+    <div class="m-head">
+          <span>CEO MESSAGE</span>
+      </div>
+      <div class="letter" [innerHtml]="ceo?.message">
+      </div>
+    </div>
+  </div>
+  <div *ngIf="loading" class="spinner">
+      <div class="flex-cen center">
+          <img src="assets/images/Skywalk logo 2.png">
+      </div>
+    </div>

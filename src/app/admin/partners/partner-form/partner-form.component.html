@@ -1,0 +1,19 @@
+<h2 mat-dialog-title class="title-text">{{title}}</h2>
+
+<mat-form-field>
+        <input type="text" placeholder="Redirect Link" matInput [(ngModel)]="logo.link">
+</mat-form-field>
+<br />
+<label>Open in New Tab?</label>
+<input type="checkbox" placeholder="Open in New Tab?" [(ngModel)]="logo.newTab">
+
+<div class="flex" class="upload-container" >
+        <app-uploading-image [title]="'Partner logo'" [initImage]="(data && data.logo && data.logo.imageDownloadURL) ? data.logo : {}" imagesSavePath="partners" [required]="false" (image)="uploadPartnersLogo($event)"></app-uploading-image>
+</div>
+
+<mat-dialog-actions>
+        <button mat-button (click)="cancel()">Cancel</button>
+        <button mat-button (click)="submitLogo()" cdkFocusInitial>
+                <span>{{action}}</span>
+        </button>
+</mat-dialog-actions>

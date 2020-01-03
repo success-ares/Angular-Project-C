@@ -1,0 +1,62 @@
+<div *ngIf="loading" class="spinner">
+  <div class="flex-cen">
+      <img src="assets/images/spinner.gif">
+  </div>
+</div>
+
+<div *ngIf="!loading" class="d-flex-col">
+<div class="d-flex-row flex-center background pos-relative" *ngIf="!loading"
+    [ngStyle]="{'background-image': 'url('+aboutUs.image.imageDownloadURL+')'}">
+  <h1 class="upperCase white"> About us</h1>
+</div>
+<div class="main-container d-flex-row pos-relative">
+  <h1 class="rotate">ABOUT US</h1>
+  <div class="logo">
+    <img class="full-width" src="assets/images/logo-aboutUs.png">
+  </div>
+  <div class="flex-11 d-flex-col margin">
+    <section class="d-flex-row margin-top white padding-l-r-10 padding-left-100 d-flex-col-media">
+      <div class="flex-1 d-flex-row">
+        <div class="remove-left-border section-title flex-1 d-flex-col">
+          <h1></h1>
+        </div>
+        <div class="flex-11 d-flex-col">
+          <div class="remove-left-border section-title d-flex-row">
+            <h1 class="full-width primary-color red-line-before">Company overview</h1>
+          </div>
+          <div *ngIf="!loading" class="black" [innerHTML]="aboutUs.overview.overView"></div>
+        </div>
+      </div>
+      <div class="flex-1 d-flex-col flex-center">
+        <img class="overView-image" *ngIf="!loading" [src]="aboutUs.overview.overViewImage.imageDownloadURL">  <!-- http://via.placeholder.com/400x350-->
+      </div>
+
+    </section>
+    <section class="d-flex-row white margin-top background-primary-color padding d-flex-col-media">
+      <div class="flex-1 d-flex-col">
+        <div class="border-left-white section-title d-flex-row flex-center">
+          <h1 class="flex-0">Pillars & Philosophy</h1>
+        </div>
+      </div>
+      <div class="flex-2 d-flex-col flex-center">
+        <div *ngIf="!loading" [innerHTML]="aboutUs.philosophy.philosophy"></div>
+      </div>
+    </section>
+    <section class="d-flex-row white margin-top padding-left-100 margin-right d-flex-col-media">
+      <div class="flex-1 d-flex-row media-order-2">
+        <img class="success-image" *ngIf="!loading" [src]="aboutUs.keySuccess.successImage.imageDownloadURL">
+        <!--<img src="http://via.placeholder.com/250x350">-->
+      </div>
+      <div class="flex-2 d-flex-col">
+        <div class="flex-1"></div>
+        <div class="flex-9">
+          <div class="border-left-primary-color section-title d-flex-row title-margin-padding">
+            <h1 class="primary-color">Keys to Success & Partners</h1>
+          </div>
+          <div *ngIf="!loading" class="black"  [innerHTML]="aboutUs.keySuccess.success"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</div>

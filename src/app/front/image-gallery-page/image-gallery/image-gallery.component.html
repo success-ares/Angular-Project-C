@@ -1,0 +1,16 @@
+<div class="m-head padding-t-100-gb">
+  <span class="color-white-gb">Image Gallery</span>
+</div>
+<div *ngIf="loading" class="spinner">
+  <div class="flex-cen center flex-center">
+    <img src="assets/images/Skywalk logo 2.png">
+  </div>
+</div>
+<div *ngIf="!loading" class="gallery-container">
+  <ks-modal-gallery class="asdasd" [id]="0" [modalImages]="images"
+    [plainGalleryConfig]="plainGalleryGrid">
+  </ks-modal-gallery>
+  <!--<div class="card" *ngFor="let image of imageGallery">-->
+    <!--<img class="image-card" [src]="image.imageDownloadURL">-->
+  <!--</div>-->
+</div>

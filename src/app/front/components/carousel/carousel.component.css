@@ -1,0 +1,81 @@
+.rightRs,.leftRs{
+    display: none!important;
+}
+
+.white {
+  background-color: white;
+}
+
+ngu-item{
+    height: 100vh;
+}
+.bannerStyle{
+    padding: 50px 0;
+}
+.mrg-bt-10{
+    margin-bottom: 10px;
+}
+.car-bg-img{
+     background:url(http://www.turkiyenewspaper.com/images/news/2016_01/big/google-parent-company-becomes-most-valuable-in-world-1454494432.jpg);
+    padding-top: 100px;
+    background-size: cover;
+     z-index: 4;
+    /*box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.4);*/
+}
+.car-bg-img{
+    padding-top: 100px;
+     z-index: 4;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+    }
+.flex-con{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100%;
+}
+.abs-bot-right-logo{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+
+}
+.abs-logo{
+    position: absolute;
+    z-index: 998;
+    bottom: -70px;
+    right: 0;
+    width: 200px;
+    }
+/* .car-container::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(21, 21, 21, .4);
+} */
+.car-container{
+    /* position: relative; */
+    z-index: 4;
+    margin: 0 auto;
+    color: #fff;
+}
+/*.car-container > div{
+    width: 60%;
+}*/
+.button-row{
+    margin: 20px 0;
+}
+.btn{
+    background-color: #9E0B0F;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+
+}

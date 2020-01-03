@@ -1,0 +1,28 @@
+<div class="margin">
+  <button [routerLink]="['/admin/skywalkProject']" mat-icon-button color="primary">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="page-title">{{'admin.skywalkProject.destinationComponent.title' | translate}} </span>
+</div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>
+      {{'admin.skywalkProject.destinationComponent.info' | translate}}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="d-flex-col">
+      <span class="page-title">{{'admin.skywalkProject.destinationComponent.headerInfo' | translate}} </span>
+      <app-header [initHeader]="destination?.header" [imagesSavePath]="imagesSavePath" (header)="updateHeader($event)" (valid)="updateHeaderValidation($event)" ></app-header>
+      <span class="page-title">{{'admin.skywalkProject.destinationComponent.sectionInfo' | translate}} </span>
+      <app-section [initSection]="destination?.section" [imagesSavePath]="imagesSavePath" (section)="updateSection($event)" (valid)="updateSectionValidation($event)" ></app-section>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="d-flex-row-rev">
+      <button [disabled]="!valid()" (click)="save()" mat-raised-button color="primary">
+        {{'admin.skywalkProject.destinationComponent.save' | translate}}
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

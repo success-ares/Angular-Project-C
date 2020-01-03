@@ -1,0 +1,106 @@
+<mat-card>
+  <mat-card-title>
+    <div class="margin">
+      <button [routerLink]="['admin']" mat-icon-button color="primary">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <span class="page-title">{{this.pageTitle}}</span> -
+    </div>
+  </mat-card-title>
+
+  <mat-card-content>
+    <div class="container" *ngIf="!loading">
+      <div class="d-flex-col">
+        <mat-expansion-panel [expanded]="openPanel" (opened)="openPanel = true;">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{'admin.home.headerPanel.panelTitle' | translate}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="d-flex-col">
+            <mat-form-field>
+              <input matInput placeholder="{{'admin.home.headerPanel.title' | translate}}" [formControl]="headerTitleControl"
+                required>
+              <mat-error>{{'admin.home.headerPanel.titleRequired' | translate}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="{{'admin.home.headerPanel.description' | translate}}" [formControl]="headerDescriptionControl"
+                required>
+              <mat-error>{{'admin.home.headerPanel.descriptionRequired' | translate}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="{{'admin.home.headerPanel.relativeURL' | translate}}" [formControl]="headerRelativeURLControl"
+                required>
+              <mat-error>{{'admin.home.headerPanel.relativeURLRequired' | translate}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="{{'admin.home.headerPanel.buttonText' | translate}}" [formControl]="headerButtonTextControl"
+                required>
+              <mat-error>{{'admin.home.headerPanel.buttonTextRequired' | translate}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput disabled=true>
+              <div>
+                <input hidden id="uploadCaptureInputFile" type="file" accept="image/*" (change)="choosePhoto(hdImage.files)" #hdImage/>
+                <img *ngIf="headerImage.base64img" class="image-field" [src]="headerImage?.base64img">
+                <button type="button" *ngIf="!headerImage.base64img" (click)="hdImage.click()" mat-raised-button color="primary">{{'admin.home.headerPanel.uploadImageButton' | translate}}</button>
+                <button type="button" *ngIf="headerImage.base64img" (click)="hdImage.click()" mat-raised-button color="primary">{{'admin.home.headerPanel.changeImageButton' | translate}}</button>
+              </div>
+            </mat-form-field>
+          </div>
+          <mat-action-row>
+            <div class="flex">
+              <button (click)="openPanel = false;" mat-raised-button class="cancel" color="warn">
+                {{'general.actions.cancel' | translate}}
+              </button>
+              <button (click)="saveCarouselData()" mat-raised-button color="primary" [disabled]="!validHeader() || isDataBeingSaved">
+                {{'general.actions.save' | translate}}
+              </button>
+            </div>
+          </mat-action-row>
+
+        </mat-expansion-panel>
+      </div>
+      <div class="table-container mat-elevation-z8" [class.hide]="!this.dataSource.data.length">
+        <mat-table #table [dataSource]="dataSource" class="center">
+          <!-- Title Column -->
+          <ng-container matColumnDef="title">
+            <mat-header-cell *matHeaderCellDef> {{'admin.home.header.title' | translate}} </mat-header-cell>
+            <mat-cell *matCellDef="let header">
+              {{header.infoBox.title}}
+            </mat-cell>
+          </ng-container>
+          <!-- Edit Column -->
+          <ng-container matColumnDef="edit">
+            <mat-header-cell *matHeaderCellDef> {{'admin.home.header.edit' | translate}} </mat-header-cell>
+            <mat-cell *matCellDef="let header">
+              <a routerLink="/admin/homepage/carousel/{{header.key}}">
+              <button matTooltipPosition="below" matToolTip="test" mat-raised-button color="primary" class="margin">
+                {{'general.actions.edit' | translate}}
+              </button>
+              </a>
+              
+            </mat-cell>
+          </ng-container>
+          <!-- Delete Column -->
+          <ng-container matColumnDef="delete">
+            <mat-header-cell *matHeaderCellDef> {{'admin.home.header.delete' | translate}} </mat-header-cell>
+            <mat-cell *matCellDef="let header">
+              <button (click)="deleteCarouselHeader(header)" matTooltipPosition="below" matToolTip="test" mat-raised-button color="warn" class="margin">
+                {{'general.actions.delete' | translate}}
+              </button>
+            </mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true">
+        </mat-paginator>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<div class="flex-center">
+  <mat-spinner mode="indeterminate" *ngIf="loading"></mat-spinner>
+</div>

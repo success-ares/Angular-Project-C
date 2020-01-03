@@ -1,0 +1,41 @@
+<div class="margin-left">
+  <div [class.margin-left-45]="!(this.node && this.node.children && this.node.children.length)">
+    <button *ngIf="this.node && this.node.children && this.node.children.length" (click)="showOrHideChildren()"  mat-icon-button color="primary">
+      <mat-icon *ngIf="!showChildren">keyboard_arrow_right</mat-icon>
+      <mat-icon *ngIf="showChildren">keyboard_arrow_down</mat-icon>
+    </button>
+
+    <mat-form-field>
+      <mat-label>{{'admin.navbar.item.titleLabel' | translate}}</mat-label>
+      <input matInput placeholder="{{'admin.navbar.item.titlePlaceholder' | translate}}" [(ngModel)]="node.text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>{{'admin.navbar.item.urlLabel' | translate}}</mat-label>
+      <input matInput placeholder="{{'admin.navbar.item.urlPlaceholder' | translate}}"  [(ngModel)]="node.link">
+    </mat-form-field>
+
+    <button *ngIf="level < MaxLevel" (click)="addNewSubItem()"  mat-icon-button color="primary">
+        <mat-icon>add</mat-icon>
+    </button>
+
+    <button *ngIf="index !== 0" (click)="moveUpItem()"  mat-icon-button color="primary">
+      <mat-icon>arrow_upward</mat-icon>
+    </button>
+
+    <button *ngIf="parent && index !== parent.length - 1" (click)="moveDownItem()"  mat-icon-button color="primary">
+      <mat-icon>arrow_downward</mat-icon>
+    </button>
+
+    <button  (click)="delete()" mat-icon-button color="warn">
+      <mat-icon>delete</mat-icon>
+    </button>
+
+    <div *ngIf="showChildren">
+      <div *ngFor="let child of node.children; let i=index">
+        <app-tree-node  [node]="child" [parent]="node.children" [index]="i" [level]="level+1"></app-tree-node>
+      </div>
+    </div>
+  </div>
+</div>
+

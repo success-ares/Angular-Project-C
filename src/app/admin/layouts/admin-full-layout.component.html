@@ -1,0 +1,72 @@
+<div class="main-container">
+    <mat-toolbar color="primary" class="nav-toolbar">
+        <div class="navbar-flex-container">
+          <button mat-button class="nav-toggle-button navbar-button" type="button" (click)="sidenav.toggle()">&#9776;</button>
+          <div class="navbar-log">
+            <a routerLink="/">
+              <!--<img src="assets/images/logo.png" alt="">-->
+              <div class="navbar-logo-container">{{'general.brand' | translate}}</div>
+            </a>
+          </div>
+
+          <div class="navbar-user">
+            <button mat-button [matMenuTriggerFor]="menu">
+              <span>user</span>
+              <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>perm_identity</mat-icon>
+                <span>settings</span>
+              </button>
+
+              <button mat-menu-item>
+                <mat-icon>settings</mat-icon>
+                <span>accountSelector</span>
+              </button>
+
+              <button mat-menu-item>
+                <mat-icon>power_settings_new</mat-icon>
+                <span>logout</span>
+              </button>
+            </mat-menu>
+          </div>
+
+        </div>
+        <!--<a routerLink="/">-->
+            <!--<div class="navbar-logo-container">{{'general.brand' | translate}}</div>-->
+        <!--</a>-->
+    </mat-toolbar>
+
+    <div>
+        <mat-sidenav-container class="sidebar-container">
+            <mat-sidenav class="sidebar-component" #sidenav mode="side" position="start" [(opened)]="sideNavOpened">
+                <mat-nav-list>
+                  <mat-list-item class="side-nav-item" routerLinkActive="active-link" *ngFor="let link of links" [routerLink]="link.link">
+                      <button mat-icon-button color="primary">
+                        <mat-icon class="material-icons margin-icon" color="primary">{{link.icon}}</mat-icon>
+                        <span class="color-primary">{{link.name}}</span>
+                      </button>
+                  </mat-list-item>
+                  <mat-list-item>
+                      <button mat-icon-button (click)="logout();" color="primary">
+                          <mat-icon class="material-icons margin-icon" color="primary">power_settings_new</mat-icon>
+                          <span class="color-primary">{{'general.logout' | translate}}</span>
+                       </button>
+                      <!-- <a mat-list-item [routerLink]="link.link"> {{ link.name }} </a> -->
+                  </mat-list-item>
+                </mat-nav-list>
+            </mat-sidenav>
+
+            <mat-sidenav-content>
+                <!-- Main content -->
+                <main class="main">
+                    <div class="container-fluid">
+                        <router-outlet></router-outlet>
+                    </div>
+                    <!-- /.conainer-fluid -->
+                </main>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
+</div>

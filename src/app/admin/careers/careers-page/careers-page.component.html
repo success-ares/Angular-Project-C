@@ -1,0 +1,162 @@
+<div class="margin">
+  <button [routerLink]="['/admin']" mat-icon-button color="primary">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="page-title">{{this.pageTitle}}</span>
+</div>
+
+<div class="flex-center">
+  <mat-spinner mode="indeterminate" *ngIf="loading"></mat-spinner>
+</div>
+
+<div [class.hide]="loading" class="d-flex-col">
+  <mat-label class="header-title">{{'admin.careers.header' | translate}}</mat-label>
+  <mat-card>
+    <mat-card-content>
+      <div class="form-container">
+        <mat-form-field>
+          <mat-label>{{'admin.careers.headerImage' | translate}} * </mat-label>
+          <input matInput disabled="true" class="margin-b-8">
+          <div>
+              <input hidden type="file" accept="image/*" (change)="chooseHeaderPhoto(headerImage.files)" #headerImage/>
+              <img *ngIf="headerImageForm.valid" class="image-field" [src]="headerImageForm.get('imageDownloadURL').value">
+              <button type="button" *ngIf="headerImageForm.invalid" (click)="headerImage.click()" mat-raised-button color="primary">{{'admin.careers.headerUploadImageButton' | translate}}</button>
+              <button type="button" *ngIf="headerImageForm.valid" (click)="headerImage.click()" mat-raised-button color="primary">{{'admin.careers.headerChangeImageButton' | translate}}</button>
+          </div>
+        </mat-form-field>
+    </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-label class="header-title">{{'admin.careers.mainSection' | translate}}</mat-label>
+    <mat-card>
+      <mat-card-content>
+        <div class="form-container">
+          <mat-form-field>
+            <input matInput [placeholder]="'admin.careers.mainSectionTitle' | translate" [formControl]="mainSectionTitleForm" required>
+            <mat-error>{{'admin.careers.mainSectionTitleRequired' | translate}}</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>{{'admin.careers.mainSectionImage' | translate}} * </mat-label>
+            <input matInput disabled="true" class="margin-b-8">
+            <div>
+                <input hidden type="file" accept="image/*" (change)="chooseMainSectionPhoto(mainSectionImage.files)" #mainSectionImage/>
+                <img *ngIf="mainSectionImageForm.valid" class="image-field" [src]="mainSectionImageForm.get('imageDownloadURL').value">
+                <button type="button" *ngIf="mainSectionImageForm.invalid" (click)="mainSectionImage.click()" mat-raised-button color="primary">{{'admin.careers.mainSectionUploadImageButton' | translate}}</button>
+                <button type="button" *ngIf="mainSectionImageForm.valid" (click)="mainSectionImage.click()" mat-raised-button color="primary">{{'admin.careers.mainSectionChangeImageButton' | translate}}</button>
+            </div>
+          </mat-form-field>
+          <div class="d-flex-row-rev">
+          <button mat-raised-button [disabled]="mainSectionImageForm.invalid || mainSectionTitleForm.invalid"
+              (click)="saveMainSection()" color="primary">{{'admin.careers.mainSectionSaveButton' | translate}}</button>
+          </div>
+      </div>
+      </mat-card-content>
+    </mat-card>
+
+  <div class="d-flex-row header-title">
+    <mat-label>{{'admin.careers.benefits' | translate}}</mat-label>
+    <button [routerLink]="['/admin/careers/benefit/new']" matTooltipPosition="below"
+          matToolTip="test" mat-raised-button color="primary" class="margin green">
+        {{'admin.careers.addBenefit' | translate}}
+      </button>
+  </div>
+  <div class="example-container mat-elevation-z8">
+      <mat-table #table2 [dataSource]="benefitsDataSource" class="center">
+
+        <!-- Benefit Header Column -->
+        <ng-container matColumnDef="benefit">
+          <mat-header-cell *matHeaderCellDef> {{'admin.careers.benefitsHeader' | translate}}  </mat-header-cell>
+          <mat-cell *matCellDef="let benefit"> {{benefit.header}} </mat-cell>
+        </ng-container>
+
+        <!-- Edit Column -->
+        <ng-container matColumnDef="edit">
+          <mat-header-cell *matHeaderCellDef> {{'admin.careers.benefitsEdit' | translate}} </mat-header-cell>
+          <mat-cell *matCellDef="let benefit">
+            <button [routerLink]="['/admin/careers/benefit/'+benefit.key+'/edit']"  matTooltipPosition="below" matToolTip="test" mat-raised-button class="margin">
+              {{'general.actions.edit' | translate}}
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <!-- Delete Column -->
+        <ng-container matColumnDef="delete">
+          <mat-header-cell *matHeaderCellDef> {{'admin.careers.benefitDelete' | translate}} </mat-header-cell>
+          <mat-cell *matCellDef="let benefit">
+            <button (click)="deleteBenefit(benefit)" matTooltipPosition="below" matToolTip="test"
+                mat-raised-button color="warn" class="margin">
+              {{'general.actions.delete' | translate}}
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="benefitsDisplayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: benefitsDisplayedColumns;"></mat-row>
+      </mat-table>
+
+      <mat-paginator #benefitsMatPaginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]">
+      </mat-paginator>
+    </div>
+
+  <div class="d-flex-row header-title">
+    <mat-label>{{'admin.careers.careersSection' | translate}}</mat-label>
+    <button [routerLink]="['/admin/careers/new']" matTooltipPosition="below"
+          matToolTip="test" mat-raised-button color="primary" class="margin green">
+        {{'admin.careers.add' | translate}}
+      </button>
+  </div>
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="careersDataSource" class="center">
+
+      <!-- Career Name Column -->
+      <ng-container matColumnDef="career">
+        <mat-header-cell *matHeaderCellDef> {{'admin.careers.careerTitle' | translate}}  </mat-header-cell>
+        <mat-cell *matCellDef="let career"> {{career.title}} </mat-cell>
+      </ng-container>
+
+       <!-- Career Category Column -->
+       <ng-container matColumnDef="category">
+         <mat-header-cell *matHeaderCellDef> {{'admin.careers.careerCategory' | translate}}  </mat-header-cell>
+         <mat-cell *matCellDef="let career">
+          <mat-form-field>
+            <mat-select placeholder="Category" (selectionChange)="updateCategory(career)" [(ngModel)]="career.category" required>
+               <mat-option *ngFor="let category of categories" [value]="category">
+                 {{category}}
+               </mat-option>
+               <mat-option (click)="openModalForAddingNewCategory(career)">Add new Category</mat-option>
+            </mat-select>
+            <mat-error>Please choose category</mat-error>
+          </mat-form-field>
+         </mat-cell>
+       </ng-container>
+
+      <!-- Edit Column -->
+      <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef> {{'admin.careers.edit' | translate}} </mat-header-cell>
+        <mat-cell *matCellDef="let career">
+          <button [routerLink]="['/admin/careers/'+career.key+'/edit']"  matTooltipPosition="below" matToolTip="test" mat-raised-button class="margin">
+            {{'general.actions.edit' | translate}}
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Delete Column -->
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef> {{'admin.careers.delete' | translate}} </mat-header-cell>
+        <mat-cell *matCellDef="let career">
+          <button (click)="deleteCareer(career)" matTooltipPosition="below" matToolTip="test"
+              mat-raised-button color="warn" class="margin">
+            {{'general.actions.delete' | translate}}
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="careersDisplayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: careersDisplayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator #careersMatPaginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]">
+    </mat-paginator>
+  </div>
+</div>

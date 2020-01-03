@@ -1,0 +1,31 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.login-form {
+    width: 33vw;
+    margin-top: 20%;
+}
+
+.form-content {
+    text-align: center;
+}
+
+.input-fields {
+    width: 80%;
+    margin-left: 5%;
+}
+
+.login-icon {
+  margin-top: -10px;
+}
+
+@media(max-width: 767px) {
+    .login-form {
+        width: 90vw;
+    }
+}

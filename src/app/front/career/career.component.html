@@ -1,0 +1,135 @@
+<div class="full-bg-wh" style="padding: 100px 0">
+    <div class="abs-image-sky">
+      <img src="assets/images/Skywalk symbol grey.png">
+    </div>
+    <div class="m-head ">
+      <span>SKYWALK CAREERS</span>
+    </div>
+    <div class="page-content cont-container">
+        <div class="form-container">
+      <!--<form [formGroup]="contactForm" #formDir="ngForm">
+        <mat-form-field>
+          <input matInput  autocomplete="name" class="input" formControlName="name"  placeholder="subject">
+          <mat-error>this field is required</mat-error>
+        </mat-form-field>-->
+        <div class="m-head">
+            <h1>SEND YOUR CV</h1>
+        </div>
+        <div style="text-align: center">
+          <a style="background-color: #d1ae1b;color: gold;color: #000"
+          href="mailto:hr@skywalkdevelopments.com"  class="button" mat-raised-button>Send Now</a>
+        </div>
+    <!--</form>-->
+      </div>
+    </div>
+  </div>
+
+
+
+<!--<div *ngIf="!hederImage || !careers" class="spinner">
+  <div class="flex-cen">
+      <img src="assets/images/spinner.gif">
+  </div>
+</div>
+<div style="position: relative">
+    <div class="abs-career-image">
+        <img src="assets/images/logo-team.png">
+    </div>
+    <div class="header-career flex-col" [ngStyle]="{'background-image': 'url(' + hederImage + ')'}" >
+        <h1 class="secondary-color">TOGETHER AT SKY WALK</h1>
+    </div>
+</div>
+<div class="flex">
+    <div class="bg-blue flex-w-60-from-100 flex-cen pad-tp-sm" style="padding: 50px 0;">
+        <div class="container">
+            <h1 class="h-bef af-bef-white">
+                {{(mainSection | async)?.mainTitle}}
+            </h1>
+        </div>
+    </div>
+    <div class="flex-w-40-from-100">
+        <img class="img" [src]="(mainSection | async)?.mainImage.imageDownloadURL" alt="career">
+    </div>
+</div>
+<div>
+<div class="abs-head-left">
+    <h1>Careers</h1>
+</div>
+</div>
+<div class="reverse-bg-color">
+    <div style="padding: 100px 0;" class="container">
+        <div>
+            <h2 class="bef-border">benefits</h2>
+        </div>
+        <div class="flex txt-ch-h-center" style="padding-top: 50px">
+            <div class="flex-w-33" *ngFor="let b of benefitsList | async">
+                <h3 class="h-gold ben-header size-30">{{b.header}}</h3>
+                <div class="ck secondary-color ben-content" [innerHtml]="b.content">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="padding-top: 100px;" *ngIf="!openDesc" class="container">
+    <div>
+        <h2 class="bef-border main-color">open positions</h2>
+    </div>
+    <div style="padding-top: 50px">
+        <div class="cat-item" *ngFor="let career of careers">
+            <div class="flex">
+                <h5 class="flex-3 size-30 header-light-black wrap">{{career[0].category}}</h5>
+                <span class="flex-1 flex-line-down header-light-black wrap">{{career.length}} open roles</span>
+            </div>
+            <div class="cust-list">
+                <div class="cust-list-item flex" *ngFor="let c of career">
+                    <div class="flex-9">
+                            <h6 class="sm-h6 header-light-black wrap">{{c.title}}</h6>
+                            <p class="light-color wrap" [innerHtml]="c.description | slice:0:120">
+                            </p>
+                    </div>
+                    <div (click)="openDescription(c)" class="flex-1 flex-center-end pointer">
+                                <i class="material-icons">arrow_forward_ios</i>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
+<div style="padding-top: 100px;" class="container" *ngIf="openDesc">
+    <div class="pointer size-20" (click)="backToList()">
+        <i style="font-size: 12px;" class="material-icons">arrow_back_ios</i>
+        <span>{{openedCareer.category}}</span>
+    </div>
+    <div style="padding: 50px 0">
+        <div>
+            <h2 class="bef-border size-30 wrap" af-bef-black>{{openedCareer.title}}</h2>
+            <span *ngIf="openedCareer.location wrap">{{openedCareer.location}}</span>
+        </div>
+        <div class="right">
+              <div class="button-row button-row-cust">
+                <a class="btnApply btnApplyTop" mat-raised-button href="mailto:jobs@skywalkdevelopments.com?subject={{openedCareer.title}}">APPLY NOW</a>
+            </div>
+        </div>
+    </div>
+    <div style="padding: 25px 0" *ngIf="openedCareer.description">
+        <h2 class="bef-border size-30" >DESCRIPTION</h2>
+        <div class="cb wrap" [innerHtml]="openedCareer.description"></div>
+    </div>
+    <div style="padding: 25px 0" *ngIf="openedCareer.requirement">
+        <h2 class="bef-border size-30" >requirement</h2>
+        <div class="cb wrap" [innerHtml]="openedCareer.requirement"></div>
+    </div>
+    <div style="padding: 25px 0" *ngIf="openedCareer.extras">
+        <h2 class="bef-border size-30" >extras (bouns)</h2>
+        <div class="cb wrap" [innerHtml]="openedCareer.extras"></div>
+    </div>
+    <div style="padding: 25px 0" *ngIf="openedCareer.benefits">
+        <h2 class="bef-border size-30" >benefits</h2>
+        <div class="cb wrap " [innerHtml]="openedCareer.benefits"></div>
+    </div>
+
+
+    <div class="button-row button-row-cust">
+        <a class="btnApply" mat-raised-button href="mailto:jobs@skywalkdevelopments.com?subject={{openedCareer.title}}">APPLY NOW</a>
+    </div>
+</div>-->

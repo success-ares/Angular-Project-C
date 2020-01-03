@@ -1,0 +1,45 @@
+<div class="margin">
+  <button [routerLink]="['/admin/news']" mat-icon-button color="primary">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="news-title">save news</span>
+</div>
+
+<div class="flex-center">
+  <mat-spinner mode="indeterminate" *ngIf="loading"></mat-spinner>
+</div>
+
+<div class="container" *ngIf="!loading">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="card-title">
+        News information
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="d-flex-col">
+        <mat-form-field>
+          <input matInput placeholder="News title"
+           [formControl]="newsTitleFrom" required>
+          <mat-error>{{'admin.genericnewss.news.titleRequired' | translate}}</mat-error>
+        </mat-form-field>
+    </div>
+      <div class="full-width">
+          <span>Paragraph</span>
+        <app-wysiwyg imagesSavePath = "news"  [contentFormControl]="paragraph"></app-wysiwyg>
+      </div>
+       <app-uploading-image [initImage]="image.value" [title]="'News main image'" imagesSavePath="news" [required]="false" (image)="newImage($event)"></app-uploading-image>
+      
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="d-flex-row-rev">
+        <button (click)="saveNews()" mat-raised-button color="primary" [disabled]="invalidForm()">
+          {{'general.actions.save' | translate}}
+        </button>
+        <button [routerLink]="['/admin/news']" mat-raised-button class="cancel" color="warn">
+          {{'general.actions.cancel' | translate}}
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

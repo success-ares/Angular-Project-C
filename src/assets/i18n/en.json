@@ -1,0 +1,504 @@
+{
+  "general": {
+    "brand": "Sample App",
+    "email": "E-mail",
+    "password": "Password",
+    "repeatPassword": "repeatPassword",
+    "signup": "Signup",
+    "login": "Login",
+    "logout": "Logout",
+    "username": "Username",
+    "type": "User Type",
+    "employer": "Employer",
+    "applicant": "Applicant",
+    "deleteConfirmation": "Are you sure you want to delete this item?",
+    "successMessage": "operation success",
+    "errorMessage": "An error occured",
+    "actions": {
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "save": "Save",
+      "add": "Add New",
+      "open": "Open"
+    }
+  },
+  "auth": {
+    "forgotYourPassword": "Forgot your password?",
+    "createAccount": "Register a new account",
+    "login": "Login to your account"
+  },
+  "errors": {
+    "login": "error in user name or password",
+    "invalidMail": "this is invalid email format",
+    "shortPassword": "the password must be atleast 8 characters",
+    "mailUsed": "this email is already used",
+    "passwordDontMatch": "passwords missmatch",
+    "required": "this field is required"
+  },
+  "admin": {
+    "Partners":{
+      "PageTitle":"Our Partners"
+    },
+    "layout": {
+      "homepage": "Homepage",
+      "contact": "Contact",
+      "navbar": "Navbar",
+      "ceo" : "Ceo message",
+      "notification" : "Notification",
+      "pages": "Pages",
+      "news": "News",
+      "pressReleases": "Press Releases",
+      "imageGallery": "Image Gallery",
+      "videoGallery": "Video Gallery",
+      "events": "Events",
+      "services": "Services",
+      "aboutus": "About Us",
+      "partners": "Partners",
+      "project": "Project",
+      "careers": "Careers",
+      "genericPages": "Generic Pages",
+      "skywalkDevelopments": "Skywalk Developments",
+      "skywalkProject": "Skywalk Project"
+    },
+    "events": {
+      "addEvent": "Add a new event",
+      "title": "Event Title",
+      "edit": "Edit",
+      "delete": "Delete",
+      "pageTitle": "Events List",
+      "confirmDelete": "Are you sure you want to delete this item?",
+      "event": {
+        "info": "Event Information",
+        "title": "Event Title",
+        "titleRequired": "Event title required",
+        "content": "Event Content *",
+        "editEventTitle": "Edit Event",
+        "newEventTitle": "New Event",
+        "innerButton": "Inner Button",
+        "innerButtonTitle": "Title",
+        "innerButtonTitleRequired": "Button title required",
+        "innerButtonUrl": "URL",
+        "innerButtonUrlRequired": "Button url required",
+        "outerButton": "Outer Button",
+        "outerButtonTitle": "Title",
+        "outerButtonTitleRequired": "Button title required",
+        "date": "Event Date"
+      }
+    },
+    "pressReleases": {
+      "addPressRelease": "Add a new press release",
+      "title": "Press Release Title",
+      "edit": "Edit",
+      "delete": "Delete",
+      "pageTitle": "Press Releases List",
+      "confirmDelete": "Are you sure you want to delete this item?",
+      "pressRelease": {
+        "info": "Press Release Information",
+        "title": "Press Release Title",
+        "titleRequired": "Press release title required",
+        "content": "Press Release Content *",
+        "editPressReleaseTitle": "Edit Press Release",
+        "newPressReleaseTitle": "New Press Release",
+        "outerButton": "Outer Button",
+        "outerButtonTitle": "Title",
+        "outerButtonTitleRequired": "Button title required"
+      }
+    },
+    "imageGallery": {
+      "pageTitle": "Image Gallery",
+      "uploadImage": "Upload more images",
+      "confirmDelete": "Are you sure you want to delete this item?",
+      "image": "Image",
+      "move": "Move image",
+      "delete": "Delete"
+    },
+    "videoGallery":{
+      "url": "Video url",
+      "move": "Move video url"
+    },
+    "skywalkDevelopments": {
+      "aboutUs": "About Us",
+      "ourPhilosophy": "Our Philosophy",
+      "ourKeysToSuccess": "Our Keys To Success",
+      "ourPartners": "Our Partners",
+      "aboutUsComponent": {
+        "title": "About Us",
+        "info": "About us Info",
+        "headerInfo": "Header Info",
+        "sectionInfo": "Section Info",
+        "save": "Save"
+      },
+      "ourPhilosophyComponent": {
+        "title": "Our Philosophy",
+        "info": "Our Philosophy Info",
+        "headerInfo": "Header Info",
+        "corporateVisionInfo": "Corporate Vision Info",
+        "strategyInfo": "Strategy Info",
+        "approachInfo": "Approach Info",
+        "targetSegmentInfo": "Target Segment Info",
+        "save": "Save"
+      },
+      "ourKeysToSuccessComponent": {
+        "title": "Our Keys To Success",
+        "info": "Our Keys To Success Info",
+        "headerInfo": "Header Info",
+        "sectionInfo": "Section Info",
+        "save": "Save"
+      },
+      "ourPartnersComponent": {
+        "title": "Our Partners",
+        "info": "Our Partners Info",
+        "headerInfo": "Header Info",
+        "sectionInfo": "Section Info",
+        "save": "Save"
+      }
+    },
+    "skywalkProject": {
+      "destination": "Destination",
+      "location": "Location",
+      "elements": "Elements",
+      "destinationComponent": {
+        "title": "Destination",
+        "info": "Destination Info",
+        "headerInfo": "Header Info",
+        "sectionInfo": "Section Info",
+        "save": "Save"
+      },
+      "locationComponent": {
+        "title": "Location",
+        "info": "Location Info",
+        "headerInfo": "Header Info",
+        "sectionInfo": "Section Info",
+        "save": "Save"
+      },
+      "ourKeysToSuccessComponent": {
+        "title": "Our Keys To Success",
+        "info": "Our Keys To Success Info",
+        "headerInfo": "Header Info",
+        "sectionInfo": "Section Info",
+        "save": "Save"
+      },
+      "ourPartnersComponent": {
+        "title": "Our Partners",
+        "info": "Our Partners Info",
+        "headerInfo": "Header Info",
+        "sectionInfo": "Section Info",
+        "save": "Save"
+      }
+    },
+    "component": {
+      "uploading": {
+        "uploadImageButton": "Upload image",
+        "changeImageButton": "Change image",
+        "deleteImageButton": "Delete image"
+      }
+    },
+    "aboutUs":{
+      "pageTitle": "About Us",
+      "aboutUsImage": "About Us Image",
+      "AboutUsImageUploadImageButton": "Upload image",
+      "AboutUsImageChangeImageButton": "Change image",
+      "overViewInfo": "Company Overview Info",
+      "overView": "Company Overview",
+      "overViewImage": "Company Overview Image",
+      "overViewImageUploadImageButton": "Upload image",
+      "overViewImageChangeImageButton": "Change image",
+      "philosophyInfo": "Company Pillars and philosophy Info",
+      "philosophy": "Company Pillars and philosophy",
+      "successInfo": "Keys to success & Partners Info",
+      "success": "Keys to success & Partners",
+      "successImage": "Keys to success & Partners Image",
+      "successImageUploadImageButton": "Upload image",
+      "successImageChangeImageButton": "Change image"
+    },
+    "home": {
+      "pageTitle": "Home Information",
+      "headerPanel": {
+        "panelTitle": "Add a new carousel item",
+        "title": "Title",
+        "titleRequired": "The header title field is required",
+        "description": "Description",
+        "descriptionRequired": "The header description field is required",
+        "relativeURL": "Learn more URL",
+        "relativeURLRequired": "The header relative url field is required",
+        "buttonText": "Learn more button Text",
+        "buttonTextRequired": "The learn more button text is required",
+        "image": "Header Image *",
+        "uploadImageButton": "Upload image",
+        "changeImageButton": "Change image",
+        "uploadBackGround": "Carousel item background image"
+      },
+      "header": {
+        "title": "Title",
+        "description": "Description",
+        "relativeURL": "Relative URL",
+        "image": "Image",
+        "delete": "Delete",
+        "edit": "Edit"
+      },
+      "section": {
+        "title": "Section Title",
+        "delete": "Delete",
+        "confirmDelete": "Are you sure you want to delete",
+        "add": "Add New Section"
+      },
+      "editSection": {
+        "editPageTitle": "Edit Header",
+        "title": "Title",
+        "titleRequired": "The header title field is required",
+        "description": "Description",
+        "descriptionRequired": "The header description field is required",
+        "relativeURL": "Learn more URL",
+        "relativeURLRequired": "The header relative url field is required",
+        "buttonText": "Learn more button Text",
+        "buttonTextRequired": "The learn more button text is required",
+        "image": "Carousel item background Image",
+        "uploadImageButton": "Upload image",
+        "changeImageButton": "Change image",
+        "isExternal":"is External URL"
+      },
+      "aboutus":{
+        "header": "About Us",
+        "title1":"Main Header",
+        "title2": "Secondary header",
+        "content": "Description",
+        "urlTextLabel" : "Learn more url",
+        "image1" : "Main Image",
+        "image2": "Secondary image",
+        "uploadImageButton": "Upload image"
+      },
+      "project":{
+        "header": "Our Projects",
+        "title1":"Main Header",
+        "title2": "Secondary header",
+        "content": "Description",
+        "urlTextLabel" : "Learn more url",
+        "projects" : "Select 6 Projects",
+        "image2": "Secondary image",
+        "uploadImageButton": "Upload image"
+      },
+      "career":{
+        "header": "Careers",
+        "title1":"Main Header",
+        "content": "Description",
+        "urlTextLabel" : "Learn more url",
+        "image1": "Main image",
+        "uploadImageButton": "Upload image"
+      }
+    },
+    "genericPages": {
+      "pageTitle": "Pages Information",
+      "title": "Page",
+      "link": "Link",
+      "delete": "Delete",
+      "edit": "Edit",
+      "link": "Section Link",
+      "move": "Move sction",
+      "confirmDelete": "Are you sure you want to delete",
+      "add": "Add a New Page",
+      "page": {
+        "editPageTitle": "Edit Page",
+        "newPageTitle": "Add a New Page",
+        "mainInfo": "Page Information",
+        "title": "Page Title",
+        "titleRequired": "The page title field is required",
+        "content": "Page Content",
+        "link": "Page Link",
+        "linkRequired": "The page link field is required",
+        "pageImage": "Page Image",
+        "uploadImageButton": "Upload image",
+        "changeImageButton": "Change image"
+      }
+    },
+    "pages": {
+      "pageTitle": "Pages Information",
+      "page": {
+        "title": "Page",
+        "link": "Link",
+        "prefixLink": "/p/",
+        "delete": "Delete",
+        "confirmDelete": "Are you sure you want to delete",
+        "add": "Add New Page"
+      },
+      "editPage": {
+        "editPageTitle": "Edit Page",
+        "newPageTitle": "Add New Page",
+        "cardTitle": "Page Information",
+        "title": "Page Title",
+        "titleRequired": "The page title field is required",
+        "backgroundImage": "Background image",
+        "uploadImageButton": "Upload image",
+        "changeImageButton": "Change image",
+        "body": "Page Body"
+      }
+    },
+    "navbar": {
+      "pageTitle": "Navbar Information",
+      "item": {
+        "titleLabel": "Item Title",
+        "titlePlaceholder": "Text",
+        "urlLabel": "Relative URL",
+        "urlPlaceholder": "eg. /products/sofa"
+      }
+    },
+    "contact": {
+      "pageTitle": "Contact Information",
+      "name" : "Name",
+      "email":"E-mail",
+      "date":"Date"
+    },
+    "projects": {
+      "pageTitle": "Projects List",
+      "confirmDelete": "Are you sure you want to delete",
+      "add": "Add a New Project",
+      "projectTitle": "Title",
+      "open": "Open",
+      "edit": "Edit",
+      "delete": "Delete",
+      "project": {
+        "projectTitle": "Project Title",
+        "editProjectPageTitle": "Edit Project",
+        "newProjectPageTitle": "Add a New Project",
+        "form": {
+          "mainInfo": "Project Information",
+          "title": "Project Title",
+          "titleRequired": "The project title field is required",
+          "headerImage": "Header Image",
+          "about": "About Description",
+          "aboutImage":"About Image",
+          "location": "Location",
+          "masterplanImage": "Masterplan Image",
+          "masterplanDescription": "Masterplan Description",
+          "diningImage": "Dining Image",
+          "shoppingImage": "Shopping Image",
+          "entertainmentImage": "Entertainment Image",
+          "businessImage": "Business Image",
+          "hospitalityImage": "Hospitality Image",
+          "dining": "Dining",
+          "shopping": "Shopping",
+          "entertainment": "Entertainment",
+          "business": "Business",
+          "hospitalityAndResidence": "Hospitality And Residence",
+          "uploadImageButton": "Upload image",
+          "changeImageButton": "Change image"
+        }
+      }
+    },
+    "careers": {
+      "pageTitle": "Careers Page",
+      "header": "Header",
+      "headerImage": "Header Image",
+      "headerUploadImageButton": "Upload image",
+      "headerChangeImageButton": "Change image",
+      "mainSection":"Main Section",
+      "mainSectionTitle": "Main Section Title",
+      "mainSectionTitleRequired": "The main section title field is required",
+      "mainSectionImage": "Main Section Image",
+      "mainSectionUploadImageButton": "Upload image",
+      "mainSectionChangeImageButton": "Change image",
+      "mainSectionSaveButton": "Save",
+      "confirmDelete": "Are you sure you want to delete",
+      "add": "Add a New Career",
+      "benefits": "Benefits",
+      "addBenefit": "Add a New Benefit",
+      "benefitsHeader": "Header",
+      "benefitsEdit": "Edit",
+      "benefitDelete": "Delete",
+      "careersSection": "Careers List",
+      "careerTitle": "Title",
+      "careerCategory": "Category",
+      "open": "Open",
+      "edit": "Edit",
+      "delete": "Delete",
+      "benefitForm": {
+        "mainInfo": "Benefit Information",
+        "header": "Career Header",
+        "headerRequired": "The benefitt header field is required",
+        "content": "Content"
+      },
+      "editBenefitPageTitle": "Edit Benefit",
+      "newBenefitPageTitle": "Add a New Benefit",
+      "career": {
+        "editCareerPageTitle": "Edit Career",
+        "newCareerPageTitle": "Add a New Career",
+        "form": {
+          "mainInfo": "Career Information",
+          "title": "Career Title",
+          "titleRequired": "The career title field is required",
+          "description": "Description",
+          "descriptionRequired": "The career description field is required",
+          "requirements": "Requirements",
+          "extras": "Extras",
+          "benefits": "Benefits",
+          "available": "Available"
+        }
+      }
+    },
+    "services": {
+      "pageTitle": "Categories List",
+      "categories": {
+        "editCategoryPageTitle": "Edit Category",
+        "newCategoryPageTitle": "Add New Category",
+        "name": "Category Name",
+        "edit": "Edit",
+        "delete": "Delete",
+        "open": "Open",
+        "confirmDelete": "Are you sure you want to delete",
+        "add": "Add New Category",
+        "categoryForm": {
+          "mainInfo": "Category Information",
+          "name": "Category Name",
+          "nameRequired": "The category name field is required"
+        }
+      },
+      "eventTypes": {
+        "editEventTypePageTitle": "Edit Event",
+        "newEventTypePageTitle": "Add New Event",
+        "name": "Event Type",
+        "edit": "Edit",
+        "delete": "Delete",
+        "open": "Open",
+        "confirmDelete": "Are you sure you want to delete",
+        "add": "Add new Event",
+        "eventTypeForm": {
+          "mainInfo": "Event Type Information",
+          "name": "Event Type Name",
+          "nameRequired": "The event type name field is required"
+        }
+      },
+      "sections": {
+        "name": "Section Name",
+        "open": "Open",
+        "delete": "Delete",
+        "confirmDelete": "Are you sure you want to delete",
+        "add": "Add New Section"
+      },
+      "section": {
+        "newSectionPageTitle": "Add New Section",
+        "editSectionPageTitle": "Edit Section",
+        "sectionForm": {
+          "mainInfo": "Section Information",
+          "name": "Section Name",
+          "nameRequired": "The section name field is required"
+        },
+        "gallerySection": {
+          "mainInfo": "Gallery",
+          "uploadTitle": "Uploading Images",
+          "image": "Image",
+          "delete": "Delete",
+          "move": "Move",
+          "confirmDelete": "Are you sure you want to delete the Image?",
+          "add": "Upload New Images"
+        }
+      }
+    }
+  },
+  "front": {
+    "layout": {
+      "profile": "My Profile",
+      "applications": "My Applications",
+      "jobs": "My Job Openings"
+    }
+  }
+}

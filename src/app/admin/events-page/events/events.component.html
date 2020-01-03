@@ -1,0 +1,53 @@
+<div class="margin">
+  <button [routerLink]="['/admin', '']" mat-icon-button color="primary">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="news-title">{{pageTitle}}</span>
+  <button [routerLink]="['/admin/add-event']" matTooltipPosition="below" matToolTip="test" mat-raised-button color="primary" class="margin green">
+    {{'admin.events.addEvent' | translate}}
+  </button>
+  <span class="relative-url"> Relative Url : /g/events </span>
+</div>
+
+<div class="flex-center">
+  <mat-spinner mode="indeterminate" *ngIf="loading"></mat-spinner>
+</div>
+
+<div [class.hide]="loading">
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" class="center">
+
+      <!-- Event Title Column -->
+      <ng-container matColumnDef="event">
+        <mat-header-cell *matHeaderCellDef> {{'admin.events.title' | translate}} </mat-header-cell>
+        <mat-cell *matCellDef="let event"> {{event.title}}</mat-cell>
+      </ng-container>
+
+      <!-- Edit Column -->
+      <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef> {{'admin.events.edit' | translate}} </mat-header-cell>
+        <mat-cell *matCellDef="let event">
+          <button [routerLink]="['/admin/edit-event', event.key]"  matTooltipPosition="below" matToolTip="test" mat-raised-button class="margin">
+            {{'admin.events.edit' | translate}}
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Delete Column -->
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef> {{'admin.events.delete' | translate}} </mat-header-cell>
+        <mat-cell *matCellDef="let event">
+          <button (click)="deleteEvent(event)" matTooltipPosition="below" matToolTip="test" mat-raised-button color="warn" class="margin">
+            {{'general.actions.delete' | translate}}
+          </button>
+        </mat-cell>ذ
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]">
+    </mat-paginator>
+  </div>
+</div>

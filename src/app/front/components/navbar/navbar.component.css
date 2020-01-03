@@ -1,0 +1,599 @@
+* {
+   transition: all 200ms ease;
+}
+.flex-reverse{
+    justify-content: flex-end;
+    margin: 0 20px;
+}
+.flex-sm-row{
+    flex-flow: row;
+}
+
+.flex-center{
+    align-items: center;
+    /*margin: auto 10px;*/
+}
+.mg5{
+    margin: auto 5px;
+}
+.gold p,
+.gold i{
+    font-size: 14px;
+}
+@media (max-width: 375px) {
+  .gold p,
+.gold i{
+    font-size: 12px;
+}
+}
+@media (max-width: 320px) {
+  .gold p,
+.gold  i{
+    font-size: 10px;
+}
+}
+.nav-bgGold{
+    background-color: #89764e;
+    color: black;
+    padding: 0px;
+    height: 49px;
+    /* font-size: 10px; */
+}
+.h100100{
+  height: 100%;
+}
+.nav-bgGold > div{
+   align-items: center;
+}
+.nav-bgGold p {
+    display: inline-block;
+}
+.bgblack{
+  background-color: black;
+  box-shadow: 1px 2px 10px 1px rgba(0,0,0,.8);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9999999;
+}
+.nav-flex{
+    display: flex;
+}
+.flex-1{
+    flex: 1;
+}
+.nav-left{
+    width: 15%;
+}
+
+.nav-right{
+    width: 85%;
+}
+
+.nav-left{
+    width: 15%;
+}
+.color-black{
+    color: black;
+}
+/*Strip the ul of padding and list styling*/
+.relative{
+    position: relative!important;
+}
+.img-icon{
+    width: 16px;
+}
+.nav-container{
+  width: 90%;
+  margin: 0 auto;
+}
+#menu{
+  width: 75%;
+}
+#menu > li{
+    flex: 1;
+}
+/*#menu > li a{
+    padding: 0;
+}*/
+li a{
+    /*padding: 0 10px;*/
+
+}
+.elephant-nav ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+
+}
+/*Create a horizontal list with spacing*/
+.elephant-nav li {
+    display:inline-block;
+       transition: all 200ms ease;
+
+}
+/*Style for menu links*/
+.elephant-nav li a {
+    display:block;
+    height: 61px;
+    font-size: 13px;
+    background: black;
+    color: #ceb040;
+    text-decoration: none;
+    width: 100%;
+    max-width: 150px;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+}
+/*Hover state for top level links*/
+.elephant-nav li:hover a {
+    background: #ceb040;
+    color: #000000;
+}
+/*Style for dropdown links*/
+.elephant-nav li:hover ul a {
+    background: #000000;
+    color: #ceb040;
+    height: 50px;
+    line-height: 50px;
+}
+/*Hover state for dropdown links*/
+.elephant-nav li:hover ul a:hover {
+    background: #ceb040;
+    color: #000000;
+}
+/*Hide dropdown links until they are needed*/
+.elephant-nav li ul {
+  box-shadow: 1px 2px 10px 1px rgba(0,0,0,.8);
+    display: none;
+}
+/*Make dropdown links vertical*/
+.elephant-nav li ul li {
+    display: block;
+    float: none;
+}
+/*Prevent text wrapping*/
+.elephant-nav li ul li a {
+    width: auto;
+    min-width: 120px;
+    padding: 0 20px;
+}
+.elephant-nav .sub-menu{
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 120px;
+box-shadow: 1px 2px 10px 1px rgba(0,0,0,.8);
+
+}
+.elephant-nav .sub-menu li {
+    float: none;
+    white-space: nowrap;
+
+}
+/*Display the dropdown on hover*/
+.elephant-nav ul li a:hover + .hidden, .hidden:hover {
+    display: block!important;
+}
+.elephant-nav ul li :hover + li {
+  display: block;
+}
+/*Style 'show menu' label button and hide it by default*/
+.elephant-nav .show-menu {
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+}
+/*Hide checkbox*/
+.elephant-nav input[type=checkbox]{
+    display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+.elephant-nav input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+.icon{
+  width: 65px;
+}
+#menu{
+    display: flex;
+}
+
+/*Responsive Styles*/
+@media screen and (max-width : 760px){
+ .icon{
+    width: 50px;
+}
+#menu{
+    display: none;
+}
+  .nav-left{
+    background-color: #000000
+  }
+  .sm-left{
+    float: left;
+    margin: 10px
+  }
+  .sm-right{
+    float: right;
+    margin: 10px;
+    margin-left: auto;
+    align-self: center;
+  }
+    .nav-right,
+    .nav-left
+    {
+        border-bottom: 1px solid #080808;
+        width: 100%;
+        display: flex;
+    }
+    .block-sm{
+      display:block;
+    }
+    .nav-container,#menu{
+    width: 100%;
+    /*margin: 0 auto;*/
+  }
+  .elephant-nav ul li a:hover + .hidden, .hidden:hover,
+  .elephant-nav ul li a:active + .hidden, .hidden:active {
+    display: block;
+  }
+    /*Make dropdown links appear inline*/
+    .elephant-nav ul {
+        position: static;
+        display: none;
+    }
+    /*Create vertical spacing*/
+   .elephant-nav  li {
+        margin-bottom: 1px;
+    }
+    /*Make all menu links full width*/
+    .elephant-nav ul li, li a {
+        width: 100%!important;
+    }
+    /*Display 'show menu' link*/
+    .elephant-nav .show-menu {
+        display:inline-block;
+    }
+    .elephant-nav .sub-menu {
+        position: relative;
+        left: 0;
+    }
+    .elephant-nav li ul li a{
+      padding: 0;
+    }
+    .elephant-nav li a {
+        max-width: 100%;
+    }
+}
+
+
+/********************************* nav bar style *************************************/
+.width-15 {
+  width: 15%;
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  /*height: 59px;*/
+  background-color: black;
+  position: fixed;
+  width: calc(80%);
+  top: 44px;
+  margin: auto;
+  padding: 0 10%;
+  z-index: 1000;
+}
+
+.navbar-logo-img {
+  height: 55px;
+  margin: 2px;
+  width: auto;
+}
+
+.color-r {
+  background-color: #2E3092;
+}
+
+.main-navbar-item {
+  position: relative;
+}
+
+.child-li {
+    width: 100%;
+    height: 100%;
+    min-height: 59px;
+}
+
+.navbar-item-style {
+  height: 59px;
+  background-color: yellow;
+  color: #ceb040;
+}
+
+.navbar-item-style > a {
+  color: #ceb040;
+}
+
+.navbar-item-style:hover {
+  background-color: #ceb040;
+}
+
+.navbar-item-style:hover > a {
+  color: #9e0b0f;
+}
+
+.main-navbar-item:hover > .children {
+  display: flex;
+}
+
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width-padding-10 {
+  width: calc(100vw - 20px);
+}
+
+.d-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.min-full-width-100 {
+  min-width: 100%;
+}
+
+.full-width {
+  width: 100vw;
+}
+
+.height-100 {
+  /*height: 500px;*/
+  background-color: black;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.item-style {
+  height: 65px;
+  background-color: black;
+  color: #ceb040;
+  min-width: 150px;
+}
+
+.item-style > a {
+  color: #ceb040;
+}
+
+.item-style:hover {
+  background-color: #ceb040;
+}
+
+.item-style:hover > a {
+  color: #9e0b0f;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-button {
+  border: none;
+  background-color: black;
+  color: #ceb040;
+  cursor: pointer;
+}
+
+.navbar-button:hover {
+  background-color: #ceb040;
+  color: black;
+}
+
+.navbar-button:focus {
+  outline: none;
+}
+
+.d-flex-row-rev {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.togglNavbar-button {
+  cursor: pointer;
+}
+
+.header-img {
+  height: 65px;
+  width: auto;
+}
+
+.flex-auto {
+  flex: auto;
+}
+
+ul {
+  margin: 0;
+}
+.navBackground {
+  position: fixed;
+  background-color: black;
+  height: 65px;
+  z-index: 1000;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+.mainNavbar {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.li-hover {
+
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.li-hover:hover > .children {
+  display: flex;
+}
+
+.children {
+  position: absolute;
+  top: 100%;
+  display: none;
+}
+
+.children:hover {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-0 {
+  flex: 0;
+}
+
+.show-media {
+  display: none;
+}
+
+.background-white {
+  background-color: black;
+}
+
+.back-button {
+  height: 50px;
+}
+
+.togglNavbar-button {
+  background-color: black;
+  color: white;
+  border: 0;
+}
+
+.togglNavbar-button > i {
+  color: white;
+}
+
+.togglNavbar-button:focus {
+  outline: none;
+}
+
+
+@media (max-width: 768px) {
+
+  .navbar-container {
+    width: calc(90% - 10px);
+    padding-right: 10px;
+
+  }
+  .width-15 {
+    width: auto;
+  }
+  .btn-nav{
+    display: flex;
+    align-items: center;
+  }
+
+  .mg-right-10{
+    margin-right: 10px;
+  }
+  .just-center{
+    justify-content: center;
+  }
+
+  .ul-navbar-media {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    height: 85vh;
+    top: 63px;
+    display: block !important;
+    overflow-y: scroll;
+    background-color: black;
+  }
+
+  .navbar-button {
+    width: 100vw;
+  }
+
+  .d-flex-col-media {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .full-width-height-media {
+    height: 100%;
+    width: 100%;
+  }
+
+  .main-navbar-item:hover > .children {
+    display: none;
+  }
+
+  .children-media {
+    /*display: flex !important;*/
+    position: fixed;
+    top: 103px;
+    left: 0;
+    background-color: black;
+    /*height: 100vh;*/
+    z-index: 1000;
+    width: 100vw;
+    height: 85vh;
+    display: block !important;
+    overflow-y: auto;
+  }
+
+  .child-li {
+   height: auto;
+  }
+
+  .full-height-media {
+    height: 100%;
+  }
+
+  .full-width-media {
+    width: 100%;
+  }
+
+  .flex-1-media {
+    flex: 1 !important;
+  }
+
+  .show-media {
+    display: flex;
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  .hide-media {
+    display: none !important;
+  }
+}

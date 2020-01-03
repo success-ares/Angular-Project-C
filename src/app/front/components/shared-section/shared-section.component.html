@@ -1,0 +1,55 @@
+<section class="section d-flex-col" [id]="right?.link">
+  <div class="flex h-full flex-1 d-flex-row d-flex-col-media">
+    <div class="wow {{leftAnimate}} flex-1 d-flex-col left" data-wow-duration="1s" data-wow-delay=".1s">
+        <div *ngIf="right?.image" class="sec-abs-header" [ngStyle]="{'background-color': right?.titleBackgroundColor }">
+            <h6 [ngStyle]="{'color': right?.titleColor }">{{right?.title}}</h6>
+        </div>
+      <img *ngIf="left?.image" class="img flex-1" [src]="left?.image.imageDownloadURL" alt="title">
+    </div>
+    <div class="wow {{rightAnimate}} flex-1 h-full pos-relative" [ngStyle]="{'background-color': right?.backgroundColor }" data-wow-duration="1s" data-wow-delay=".5s">
+       <div class="waterMark" *ngIf="right?.wterMark"
+       [ngStyle]="{'background-image': 'url(' + right?.wterMark.imageDownloadURL + ')'}" ></div>
+        <div *ngIf="!right?.image" class="view1 flex-cen flex-center stretc" >
+          <div class="container pos-relative">
+              <h6 [ngStyle]="{'color': right?.titleColor }">{{right?.title}}</h6>
+          </div>
+          <div *ngIf="!dummy && right?.paragraph" [ngStyle]="{'color': right?.paragraphColor }" class="container content grow">
+              <div class="p" [innerHtml]='right?.paragraph'></div>
+                 <div class="button-row" *ngIf="readMore">
+                    <a [ngStyle]="{'color': right?.paragraphColor }" [routerLink]="readMore" class="btn" mat-button>Read More</a>
+                </div>
+          </div>
+          <div class="footer content" *ngIf="right?.footer"
+            [ngStyle]="{'background-color': right?.footerbackgroundColor}">
+                <div [ngStyle]="{'color': right?.footerColor }" class="footer content">
+                    <div class="container" [innerHtml]='right?.footer'>
+                    </div>
+                </div>
+            </div>
+      </div>
+      <div class="d-flex-col full-height"  *ngIf="right?.image">
+        <div class="min-height-30"></div>
+        <div class="flex-1 remv-30 d-flex-col" *ngIf="right?.image.imageDownloadURL">
+          <img class="img max-height" [src]="right?.image.imageDownloadURL" alt="title">
+        </div>
+        <div class="flex-1 d-flex-col">
+          <div *ngIf="!dummy" class="container">
+            <p class="p" [innerHtml]='right?.paragraph' [ngStyle]="{'color': right?.paragraphColor }">
+            </p>
+            <div  class="button-row" *ngIf="readMore">
+              <a [ngStyle]="{'color': right?.paragraphColor }" [routerLink]="readMore" class="btn" mat-button>Read More</a>
+            </div>
+          </div>
+        </div>
+        <div style="flex-grow: 1"></div>
+        <div class="d-flex-col" *ngIf="right?.footer"
+             [ngStyle]="{'background-color': right?.footerbackgroundColor}">
+          <div [ngStyle]="{'color': right?.footerColor }" class="footer content">
+            <div class="container" [innerHtml]='right?.footer'>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

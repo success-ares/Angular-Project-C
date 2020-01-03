@@ -1,0 +1,145 @@
+<div *ngIf="!loading" class="margin">
+  <button [routerLink]="['/admin']" mat-icon-button color="primary">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="page-title">{{this.pageTitle}}</span>
+</div>
+
+<div class="flex-center">
+  <mat-spinner mode="indeterminate" *ngIf="loading"></mat-spinner>
+</div>
+
+<div class="container" *ngIf="!loading">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="card-title">
+        {{'admin.projects.project.form.mainInfo' | translate}}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="form-container">
+        <mat-form-field>
+          <input matInput placeholder="{{'admin.projects.project.form.title' | translate}}"
+           [formControl]="projectTitle" required>
+          <mat-error>{{'admin.projects.project.form.titleRequired' | translate}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>{{'admin.projects.project.form.headerImage' | translate}} * </mat-label>
+          <input matInput disabled="true" class="margin-b-8">
+          <div>
+              <input hidden type="file" accept="image/*" (change)="chooseHeaderPhoto(headerImageElement.files)" #headerImageElement/>
+              <img *ngIf="headerImageForm.valid" class="image-field" [src]="headerImageForm.get('imageDownloadURL').value">
+              <button type="button" *ngIf="headerImageForm.invalid" (click)="headerImageElement.click()" mat-raised-button color="primary">{{'admin.careers.headerUploadImageButton' | translate}}</button>
+              <button type="button" *ngIf="headerImageForm.valid" (click)="headerImageElement.click()" mat-raised-button color="primary">{{'admin.careers.headerChangeImageButton' | translate}}</button>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput disabled="true" class="margin-b-8" placeholder="{{'admin.projects.project.form.about' | translate}} *">
+          <app-wysiwyg [contentFormControl]="projectAbout" [imagesSavePath]="'/projects/images'"></app-wysiwyg>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>{{'admin.projects.project.form.aboutImage' | translate}} * </mat-label>
+          <input matInput disabled="true" class="margin-b-8">
+          <div>
+              <input hidden type="file" accept="image/*" (change)="chooseAboutPhoto(aboutImageElement.files)" #aboutImageElement/>
+              <img *ngIf="aboutImageForm.valid" class="image-field" [src]="aboutImageForm.get('imageDownloadURL').value">
+              <button type="button" *ngIf="aboutImageForm.invalid" (click)="aboutImageElement.click()" mat-raised-button color="primary">{{'admin.careers.headerUploadImageButton' | translate}}</button>
+              <button type="button" *ngIf="aboutImageForm.valid" (click)="aboutImageElement.click()" mat-raised-button color="primary">{{'admin.careers.headerChangeImageButton' | translate}}</button>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput disabled="true" class="margin-b-8" placeholder="{{'admin.projects.project.form.location' | translate}} *">
+          <div>
+            <!--<app-google-maps [location]="projectLocation"></app-google-maps>-->
+          </div>
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <mat-label>{{'admin.projects.project.form.masterplanImage' | translate}} * </mat-label>
+          <input matInput disabled="true" class="margin-b-8">
+          <div>
+              <input class="hide" type="file" accept="image/*" (change)="chooseMasterplanPhoto(bgImage.files)" #bgImage/>
+              <img *ngIf="projectMasterplan.valid" class="image-field" [src]="projectMasterplan.get('imageDownloadURL').value">
+              <button type="button" *ngIf="projectMasterplan.invalid" (click)="bgImage.click()" mat-raised-button color="primary">{{'admin.projects.project.form.uploadImageButton' | translate}}</button>
+              <button type="button" *ngIf="projectMasterplan.valid" (click)="bgImage.click()" mat-raised-button color="primary">{{'admin.projects.project.form.changeImageButton' | translate}}</button>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput disabled="true" class="margin-b-8" placeholder="{{'admin.projects.project.form.masterplanDescription' | translate}} * ">
+          <app-wysiwyg [contentFormControl]="projectMasterplanDescription" [imagesSavePath]="'/projects/images'"></app-wysiwyg>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>{{'admin.projects.project.form.diningImage' | translate}} </mat-label>
+          <input matInput disabled="true" class="margin-b-8">
+          <div>
+              <input hidden type="file" accept="image/*" (change)="chooseDiningPhoto(diningImageElement.files)" #diningImageElement/>
+              <img *ngIf="diningImageForm.valid" class="image-field" [src]="diningImageForm.get('imageDownloadURL').value">
+              <button type="button" *ngIf="diningImageForm.invalid" (click)="diningImageElement.click()" mat-raised-button color="primary">{{'admin.careers.headerUploadImageButton' | translate}}</button>
+              <button type="button" *ngIf="diningImageForm.valid" (click)="diningImageElement.click()" mat-raised-button color="primary">{{'admin.careers.headerChangeImageButton' | translate}}</button>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>{{'admin.projects.project.form.shoppingImage' | translate}} </mat-label>
+          <input matInput disabled="true" class="margin-b-8">
+          <div>
+              <input hidden type="file" accept="image/*" (change)="chooseShoppingPhoto(shoppingImageElement.files)" #shoppingImageElement/>
+              <img *ngIf="shoppingImageForm.valid" class="image-field" [src]="shoppingImageForm.get('imageDownloadURL').value">
+              <button type="button" *ngIf="shoppingImageForm.invalid" (click)="shoppingImageElement.click()" mat-raised-button color="primary">{{'admin.careers.headerUploadImageButton' | translate}}</button>
+              <button type="button" *ngIf="shoppingImageForm.valid" (click)="shoppingImageElement.click()" mat-raised-button color="primary">{{'admin.careers.headerChangeImageButton' | translate}}</button>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>{{'admin.projects.project.form.entertainmentImage' | translate}} </mat-label>
+          <input matInput disabled="true" class="margin-b-8">
+          <div>
+              <input hidden type="file" accept="image/*" (change)="chooseEntertainmentPhoto(entertainmentImageElement.files)" #entertainmentImageElement/>
+              <img *ngIf="entertainmentImageForm.valid" class="image-field" [src]="entertainmentImageForm.get('imageDownloadURL').value">
+              <button type="button" *ngIf="entertainmentImageForm.invalid" (click)="entertainmentImageElement.click()" mat-raised-button color="primary">{{'admin.careers.headerUploadImageButton' | translate}}</button>
+              <button type="button" *ngIf="entertainmentImageForm.valid" (click)="entertainmentImageElement.click()" mat-raised-button color="primary">{{'admin.careers.headerChangeImageButton' | translate}}</button>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>{{'admin.projects.project.form.businessImage' | translate}} </mat-label>
+          <input matInput disabled="true" class="margin-b-8">
+          <div>
+              <input hidden type="file" accept="image/*" (change)="chooseBusinessPhoto(businessImageElement.files)" #businessImageElement/>
+              <img *ngIf="businessImageForm.valid" class="image-field" [src]="businessImageForm.get('imageDownloadURL').value">
+              <button type="button" *ngIf="businessImageForm.invalid" (click)="businessImageElement.click()" mat-raised-button color="primary">{{'admin.careers.headerUploadImageButton' | translate}}</button>
+              <button type="button" *ngIf="businessImageForm.valid" (click)="businessImageElement.click()" mat-raised-button color="primary">{{'admin.careers.headerChangeImageButton' | translate}}</button>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>{{'admin.projects.project.form.hospitalityImage' | translate}} </mat-label>
+          <input matInput disabled="true" class="margin-b-8">
+          <div>
+              <input hidden type="file" accept="image/*" (change)="chooseHospitalityPhoto(hospitalityImageElement.files)" #hospitalityImageElement/>
+              <img *ngIf="hospitalityImageForm.valid" class="image-field" [src]="hospitalityImageForm.get('imageDownloadURL').value">
+              <button type="button" *ngIf="hospitalityImageForm.invalid" (click)="hospitalityImageElement.click()" mat-raised-button color="primary">{{'admin.careers.headerUploadImageButton' | translate}}</button>
+              <button type="button" *ngIf="hospitalityImageForm.valid" (click)="hospitalityImageElement.click()" mat-raised-button color="primary">{{'admin.careers.headerChangeImageButton' | translate}}</button>
+          </div>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="flex">
+        <button [routerLink]="['/admin/projects']" mat-raised-button class="cancel" color="warn">
+          {{'general.actions.cancel' | translate}}
+        </button>
+        <button (click)="saveProject()" mat-raised-button color="primary" [disabled]="invalidForm()">
+          {{'general.actions.save' | translate}}
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

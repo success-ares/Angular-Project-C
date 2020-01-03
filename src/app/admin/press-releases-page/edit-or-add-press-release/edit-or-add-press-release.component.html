@@ -1,0 +1,56 @@
+<div class="margin">
+  <button [routerLink]="['/admin/pressReleases']" mat-icon-button color="primary">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="news-title">{{pageTitle}}</span>
+</div>
+
+<div class="flex-center">
+  <mat-spinner mode="indeterminate" *ngIf="loading"></mat-spinner>
+</div>
+
+<div class="container" *ngIf="!loading">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="card-title">
+        {{'admin.pressReleases.pressRelease.info' | translate}}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="d-flex-col">
+        <form [formGroup]="pressReleaseGroupForm">`
+          <mat-form-field class="full-width">
+            <input matInput placeholder="{{'admin.pressReleases.pressRelease.title' | translate}}"
+                   formControlName="title" required>
+            <mat-error>{{'admin.pressReleases.pressRelease.titleRequired' | translate}}</mat-error>
+          </mat-form-field>
+          <div class="full-width d-flex-col">
+            <span class="margin-b-8">{{'admin.pressReleases.pressRelease.content' | translate}}</span>
+            <app-wysiwyg [imagesSavePath]="pressReleases"  [contentFormControl]="pressReleaseGroupForm.get('content')"></app-wysiwyg>
+          </div>
+          <app-uploading-image [initImage]="pressReleaseGroupForm.get('image').value" [title]="'PressRelease main image'" imagesSavePath="pressReleases" [required]="true" (image)="pressReleaseImage($event)"></app-uploading-image>
+          <div class="d-flex-col margin-t-8">
+            <span class="margin-b-8">{{'admin.pressReleases.pressRelease.outerButton' | translate}}</span>
+            <div class="d-flex-row" formGroupName="outerButton">
+              <mat-form-field class="flex-1">
+                <input matInput placeholder="{{'admin.pressReleases.pressRelease.outerButtonTitle' | translate}}"
+                       formControlName="title" required>
+                <mat-error>{{'admin.pressReleases.pressRelease.outerButtonTitleRequired' | translate}}</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="d-flex-row-rev">
+        <button (click)="savePressRelease()" mat-raised-button color="primary" [disabled]="invalidForm()">
+          {{'general.actions.save' | translate}}
+        </button>
+        <button [routerLink]="['/admin/pressReleases']" mat-raised-button class="cancel" color="warn">
+          {{'general.actions.cancel' | translate}}
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,58 @@
+<div *ngIf="loading" class="spinner">
+    <div class="flex-cen center">
+        <img src="assets/images/Skywalk logo 2.png">
+    </div>
+</div>
+
+<div *ngIf="blog" class="mg-100 container">
+<div class="mg15-tp"> 
+    <h1>{{blog?.title}}</h1>
+</div>
+<div class=" news-images">
+  <img class="img contain" [src]="blog.image.imageDownloadURL" alt="" srcset="">
+</div>
+<div class="datSocial flex">
+    <div *ngIf="(pageName === 'events' && blog?.eventDate) || pageName !== 'events'" class="time inline-block">
+        <div *ngIf="pageName === 'events'" class="flex-row">
+            <i class="material-icons g-flex-cen">date_range</i>{{blog?.eventDate | date}}
+        </div>
+        <div *ngIf="pageName !== 'events'" class="flex-row">
+            <i class="material-icons g-flex-cen">date_range</i>{{blog?.date | date}}
+        </div>
+      </div>
+      <div class="blog-social">
+          
+        <span class="flex-cen">
+          <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{shareLink}}">
+              <img class="blog-img-icon" src="assets/icons/facebook-f.svg">
+          </a>
+        </span>
+        <span class="flex-cen">
+            <a target="_blank" href="https://twitter.com/home?status={{shareLink}}">
+                <img class="blog-img-icon" src="assets/icons/twitter.svg">
+            </a>
+        </span>
+          <span class="flex-cen">
+              <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{shareLink}}&title={{blog?.title}}&summary=&source=">
+                  <img class="blog-img-icon" src="assets/icons/linkedin.svg">
+              </a>
+          </span>
+      </div>
+</div>
+  <div class="paragaph mg-b-t-10">
+      <div class="content gray" [innerHtml]="blog.content">
+      </div>
+  </div>
+  
+  <div *ngIf="!!blog.innerButton">
+    <a target="_blank" [href]="blog.innerButton.url" class="news-button blog-btn" mat-raised-button>
+      {{blog.innerButton.title}}
+    </a>
+</div>
+</div>
+
+<div *ngIf="loading" class="spinner">
+  <div class="flex-cen center">
+      <img src="assets/images/Skywalk logo 2.png">
+  </div>
+</div>

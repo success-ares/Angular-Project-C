@@ -1,0 +1,11 @@
+<div class="d-flex-col">
+  <app-shared-header [header]="(response | async)?.header"></app-shared-header>
+  <div class="d-flex-col">
+    <app-shared-section id="dining" leftAnimate="zoomIn" rightAnimate="zoomIn" [left]="(response | async)?.diningAndDiningExperience.left" [right]="(response | async)?.diningAndDiningExperience.right"></app-shared-section>
+    <app-shared-section id="diningExperience" leftAnimate="zoomIn" rightAnimate="zoomIn" [left]="(response | async)?.dinningExp.left" [right]="(response | async)?.dinningExp.right"></app-shared-section>
+    <app-shared-section id="shopping" leftAnimate="zoomIn" rightAnimate="zoomIn" [left]="(response | async)?.shopping.left" [right]="(response | async)?.shopping.right"></app-shared-section>
+    <app-shared-section id="entertainment" leftAnimate="zoomIn" rightAnimate="zoomIn" [left]="(response | async)?.entertainment.left" [right]="(response | async)?.entertainment.right"></app-shared-section>
+    <app-shared-section id="business" leftAnimate="zoomIn" rightAnimate="zoomIn" [left]="(response | async)?.business.left" [right]="(response | async)?.business.right"></app-shared-section>
+    <app-shared-section id="hospitalityAndResidence" leftAnimate="zoomIn" rightAnimate="zoomIn" [left]="(response | async)?.hospitalityAndResidence.left" [right]="(response | async)?.hospitalityAndResidence.right"></app-shared-section>
+  </div>
+</div>

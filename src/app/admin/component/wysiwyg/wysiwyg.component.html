@@ -1,0 +1,18 @@
+<ckeditor
+    [name]="'saveButton'"
+    [(ngModel)]="content"
+    (change)="onChange($event)"
+    [config]="ckeConfig"
+    #ckeditor
+    [readonly]="false" >
+        <ckbutton
+        [name]="'imageExplorer'"
+        [command]="'openImageExplorer'"
+        (click)="ckImage.click()"
+        [icon]="'image'"
+        [label]="'Open image explorer'"
+        [toolbar]="'insert,1'">
+        </ckbutton>
+</ckeditor>
+<input id="upload" hidden type="file" accept="image/*"
+  (change)="uploadCKEditorPhoto(ckImage.files)" #ckImage>

@@ -1,0 +1,35 @@
+<div class="abs-head-right">
+    <h1>{{projects.title1}}</h1>
+</div>
+<div class="container">
+    <div class="flex">
+        <div class="flex-w-40-from-100">
+            <h3 class="h-bef main-color">{{projects.title1}}</h3>
+            <p class="cus-p">{{projects.content}}</p>
+                <div class="button-row" *ngIf="projects.learnMore">
+                    <a [routerLink]="projects.learnMore" class="btn" mat-button>Leaen more</a>
+                </div>
+        </div>
+        <div class="flex-w-60-from-100">
+            <div class="flex">
+                <!--This is dummy div used for layout -->
+                <div class="flex-w-2 sm-hide" style="background-color: transparent">
+            </div>
+            <div #div *ngFor="let p of projects.ProjectsImages" (window:resize)="0" 
+            [ngStyle]="{'height.px': div.offsetWidth }" class="flex-w-4">
+                <img class="img" [src]="p.imgDownloadPath" alt="aboutus" />
+            </div>
+            <!--This is dummy div used for layout -->
+                <div class="flex-w-2 sm-hide" style="background-color: transparent">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="reverse-bg-color">
+    <div class="pd-tp-200 mg-t-100 bg-img bg-img-w-50" [ngStyle]="{'background-image': 'url(' + projects.imageUrl2 + ')'}">
+        <div class="proj-abs-header">
+            <h3 class="reverse-header-font">{{projects.title2}}</h3>
+        </div>
+    </div>
+</div>

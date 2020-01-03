@@ -1,0 +1,65 @@
+
+<div class="margin">
+  <button [routerLink]="['admin']" mat-icon-button color="primary">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="page-title">{{this.pageTitle}}</span>
+</div>
+
+<div class="flex-center">
+  <mat-spinner mode="indeterminate" *ngIf="loading"></mat-spinner>
+</div>
+
+
+<mat-tab-group>
+  <mat-tab label="Contact Info"> 
+    <div class="container" *ngIf="!loading">
+      <app-google-maps [location]="contactLocation"></app-google-maps>
+        <div class="full-width">
+            <span>Address</span>
+            <app-wysiwyg imagesSavePath = "contactus"  [contentFormControl]="address"></app-wysiwyg>
+        </div>
+        <div class="flex">
+          <button [routerLink]="['/admin/homepage']" mat-raised-button class="cancel" color="warn">
+            {{'general.actions.cancel' | translate}}
+          </button>
+          <button (click)="saveContact()" mat-raised-button color="primary" [disabled]="!validContact()">
+            {{'general.actions.save' | translate}}
+          </button>
+        </div>
+    </div> 
+  </mat-tab>
+  <mat-tab label="Contact Messages">
+    <div class="container" >
+      <div class="example-container mat-elevation-z8" >
+        <mat-table #table *ngIf="!loading" [dataSource]="dataSource" class="center">
+
+          <!-- Name  Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> {{'admin.contact.name' | translate}} </mat-header-cell>
+            <mat-cell *matCellDef="let contact"> {{contact.name}} </mat-cell>
+          </ng-container>
+
+          <!-- Email Column -->
+          <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef> {{'admin.contact.email' | translate}} </mat-header-cell>
+            <mat-cell *matCellDef="let contact"> {{contact.email}} </mat-cell>
+          </ng-container>
+
+          <!-- Date Column -->
+          <ng-container matColumnDef="date">
+            <mat-header-cell *matHeaderCellDef> {{'admin.contact.date' | translate}} </mat-header-cell>
+            <mat-cell *matCellDef="let contact"> {{contact.date | date:'fullDate'}}</mat-cell>
+          </ng-container>
+
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row class="contact-row" (click)="contactDetails(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+
+      </div>
+
+    </div>
+  </mat-tab>
+</mat-tab-group>
+

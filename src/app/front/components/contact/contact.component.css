@@ -1,0 +1,19 @@
+.contact-sec{
+    background-color: rgba(26, 26, 26, .25);
+    font-size: 14px;
+}
+.contact-sec a{
+    color: rgba(255, 255, 255, .25);
+}
+.contact-sec .flex-cen > div{
+    margin: 5px 0 ;
+}
+.text-center{
+    text-align: center;
+}
+.flex-w-2 > div{
+    padding: 5px 0;
+}
+.self-center{
+    align-self: center;
+}

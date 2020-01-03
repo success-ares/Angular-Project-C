@@ -1,0 +1,49 @@
+<div *ngIf="loading" class="spinner">
+  <div class="flex-cen center">
+    <img src="assets/images/Skywalk logo 2.png">
+  </div>
+</div>
+<div>
+  <!--Slider section -->
+  <!-- <div *ngIf="homePage" id="home" class="home-sec flex-cen" [ngStyle]="{'background-image': 'url(' + homePage?.image.imgDownloadPath + ')'}">
+      <div class="main-img">
+        <img src="assets/images/S-Skywalk.png">
+      </div>
+      <div class="text flex-cen flex-center-media">
+        <div class="container">
+           <h1 class="f-50">{{homePage?.title}}</h1>
+           <p>{{homePage?.description}}</p>
+          <div style="text-align: center ">
+            <a class="home-link" style="background-color: white"
+               [routerLink] = '[homePage?.learnMore]'class="button" mat-raised-button>READ MORE</a>
+          </div>
+        </div>
+        </div>
+  </div> -->
+  <!-- Carousel -->
+  <div>
+  <ngu-carousel [inputs]="homeCarousel" (initData)="initDataFn($event)">
+    <ngu-item *ngFor="let carouselItem of carouselItems;let i=index" NguCarouselItem>
+      <div class="carousel-background" [style.background-image]="'url('+carouselItem.backgroundImage.imageURL+')'">
+        <div class="d-flex flex-column carousel-info">
+          <div class="text-container">
+            <div class="title">{{carouselItem.infoBox.title}}</div>
+            <div class="description">{{carouselItem.infoBox.description}}</div>
+          </div>
+          <div class="button-wrapper">
+            <a class="button-primary cta big-button" (click)="openPage(carouselItem.infoBox.relativeURL,carouselItem.infoBox.isExternal)">{{carouselItem.infoBox.buttonText}}</a>
+            <a class="small-button" (click)="openPage(carouselItem.infoBox.relativeURL,carouselItem.infoBox.isExternal)"></a>
+          </div>
+        </div>
+      </div>
+    </ngu-item>
+    <button NguCarouselPrev class='leftRs carousel-button'>&lt;</button>
+    <button NguCarouselNext class='rightRs carousel-button'>&gt;</button>
+  </ngu-carousel>
+  <button type="button" class="next-button" (click)="moveToNextSlide($event)"></button>
+  <button type="button" class="prev-button" (click)="moveToPrevSlide($event)"></button>
+  </div>
+  <div class="contact-sec">
+    <app-shared-contact-us-form></app-shared-contact-us-form>
+  </div>
+</div>

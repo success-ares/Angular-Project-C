@@ -1,0 +1,30 @@
+<div class="full-bg-wh">
+    <div class="abs-image-sky">
+      <img src="assets/images/Skywalk symbol grey.png">
+    </div>
+    <div class="m-head ">
+      <span class="span">Contact us</span>
+    </div>
+    <div class="page-content cont-container">
+        <div class="form-container">
+      <form [formGroup]="contactForm" #formDir="ngForm">
+        <mat-form-field>
+          <input matInput  autocomplete="name" class="input" formControlName="name"  placeholder="Full Name">
+          <mat-error>this field is required</mat-error>
+        </mat-form-field>
+         <mat-form-field>
+          <input matInput type="tel"  autocomplete="email" formControlName="email"  placeholder="Mobile Number">
+          <mat-error>Invalid Number</mat-error>
+        </mat-form-field>
+        <mat-form-field >
+          <textarea matInput rows="2" formControlName="feedback"  placeholder="Write your message here" ></textarea>
+          <mat-error>this field is required</mat-error>
+        </mat-form-field>
+        <div>
+          <button [disabled]="!contactForm.valid" type="submit" (click)="sendMessage(formDir)" class="button" mat-raised-button>Send Now</button>
+        </div>
+        <div class="message" *ngIf="message">{{message}}</div>
+    </form>
+      </div>
+    </div>
+  </div>

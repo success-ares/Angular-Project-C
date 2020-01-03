@@ -1,0 +1,9 @@
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex-row-rev {
+  display: flex;
+  flex-direction: row-reverse;
+}

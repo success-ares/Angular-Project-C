@@ -1,0 +1,22 @@
+.ceo-sec{
+    margin: 100px 0;
+}
+.m-head{
+    padding: 40px 0;
+    text-align: center;
+    width: 100%;
+    color: white;
+    /*position: relative;*/
+}
+.m-head span{
+    position: relative;
+    font-size: 25px;
+}
+.m-head span{
+    position: relative;
+}
+.letter{
+    color: white;
+    line-height: 1.7;
+    text-align: center;
+}

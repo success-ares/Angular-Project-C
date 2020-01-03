@@ -1,0 +1,29 @@
+
+<ngu-carousel
+[inputs]="carouselOne"
+(carouselLoad)="myfunc($event)">
+  <ngu-item NguCarouselItem *ngFor="let c of carousel">
+      <div class="flex">
+        <div class="white flex-w-70-from-100 h-100-vh">
+            <div class="container">
+                    <div class="flex-con h-100-vh">
+                        <div>
+                            <h1 class="main-color mrg-bt-10">{{c.title}}</h1>
+                            <p class="cus-p sm-carousel-content">{{c.description}}</p>
+                            <div *ngIf="c.learnMoreUrl" class="button-row">
+                            <a class="btn" (click)="openPage(c.learnMoreUrl)" mat-button>LEARN MORE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-w-30-from-100 car-bg-img h-100-vh"  [ngStyle]="{'background-image': 'url('+ c.imageURL+')'}">
+        </div>
+        <div class="abs-bot-right-logo">
+            <img src="assets/images/logo-home-1.png">
+        </div>
+     </div>
+  </ngu-item>
+    <button NguCarouselPrev class='leftRs'>&lt;</button>
+    <button NguCarouselNext class='rightRs'>&gt;</button>
+</ngu-carousel>

@@ -1,0 +1,32 @@
+<div *ngIf="loading" class="spinner">
+    <div class="flex-cen center">
+        <img src="assets/images/Skywalk logo 2.png">
+    </div>
+  </div>
+
+<section class=" full-width par-white" *ngIf="!loading">
+    <div class="m-head " style="text-align: center;padding: 100px 0;color: #000">
+      <span class="part">OUR PARTNERS OF SUCCESS</span>
+    </div>
+  <div class="container d-flex-warp flex-row-cen">
+    <div class="width-25 d-flex-col flex-center" *ngFor="let partner of response; let i=index;" [class.clickable-button]="partner && partner.link && partner.link.length > 0" (click)="openLink(partner)">
+      <img *ngIf="i%4 === 0" class="logo wow slideInLeft" data-wow-duration="1s" data-wow-delay="1s" data-wow-offset="10" [src]="partner.imageDownloadURL">
+      <img *ngIf="(i%4 !== 0 && (i+1)%4 !== 0)" class="logo wow zoomIn" data-wow-duration="1s" data-wow-delay="1s" data-wow-offset="10" [src]="partner.imageDownloadURL">
+      <img *ngIf="(i+1)%4 === 0" class="logo wow slideInRight" data-wow-duration="1s" data-wow-delay="1s" data-wow-offset="10" [src]="partner.imageDownloadURL">
+    </div>
+  </div>
+  <!--<div class="container d-flex-warp flex-row-cen">-->
+    <!--<div class="width-20 d-flex-col flex-center" *ngFor="let partner of (response | async)?.partners1; let i=index">-->
+        <!--<img *ngIf="i < 5 && i%5===0" class="logo wow slideInLeft" data-wow-duration="1s" data-wow-delay="1s" data-wow-offset="10" [src]="partner.imageDownloadURL">-->
+        <!--<img *ngIf="i < 5 && (i%5===1 || i%5===2 || i%5===3)" class="logo wow zoomIn" data-wow-duration="1s" data-wow-delay="1s" data-wow-offset="10" [src]="partner.imageDownloadURL">-->
+        <!--<img *ngIf="i < 5 &&  i%5===4" class="logo wow slideInRight" data-wow-duration="1s" data-wow-delay="1s" data-wow-offset="10" [src]="partner.imageDownloadURL">-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="container d-flex-warp flex-row-cen">-->
+    <!--<div class="width-25 d-flex-col flex-center" *ngFor="let partner of (response | async)?.partners2; let i=index">-->
+      <!--<img *ngIf=" i%4===0" class="logo wow slideInLeft" data-wow-duration="1s" data-wow-delay="1s" data-wow-offset="10" [src]="partner.imageDownloadURL">-->
+      <!--<img *ngIf="(i%4===1 || i%4===2)" class="logo wow zoomIn" data-wow-duration="1s" data-wow-delay="1s" data-wow-offset="10" [src]="partner.imageDownloadURL">-->
+      <!--<img *ngIf=" i%4===3" class="logo wow slideInRight" data-wow-duration="1s" data-wow-delay="1s" data-wow-offset="10" [src]="partner.imageDownloadURL">-->
+    <!--</div>-->
+  <!--</div>-->
+</section>

@@ -1,0 +1,56 @@
+.notfound{ 
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    color: #ffff;
+    background-color: #8b7550;
+}
+.notfound img{
+    width: 50%;
+    margin: 0 auto;
+}
+.notfound h1{
+    font-size: 40px;
+}
+.notfound p {
+    margin: 20px 0;
+    font-size: 20px;
+}
+.header{
+    width: 100%;
+    height: 340px;
+    background: url(http://kb4images.com/images/free-images/36934382-free-images.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header h1{
+    margin: 0;
+    font-size:40px; 
+}
+.flex-col{
+    display: flex;           
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center;
+}
+.page-content{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.cont-mg{
+    margin: 50px auto;
+}
+.container{
+    width: 80%;
+    overflow-wrap: break-word;
+    position: relative;
+
+}
+.gen p {
+    width: 100%;
+}
+ img{
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,30 @@
+mat-grid-tile {
+  background: lightblue;
+}
+
+.d-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
+.padding-10 {
+  padding: 10px;
+}

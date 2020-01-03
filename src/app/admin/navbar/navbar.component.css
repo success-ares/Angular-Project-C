@@ -1,0 +1,13 @@
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  width: 100%;
+  margin: 0;
+}
+
+.margin-10 {
+  margin: 10px;
+}

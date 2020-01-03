@@ -1,0 +1,17 @@
+.margin-b-8 {
+  margin-bottom: 8px;
+}
+
+.example-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+  margin-left: 8px;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.example-selected-value {
+  margin: 15px 0;
+}
